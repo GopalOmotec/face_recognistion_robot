@@ -1,0 +1,237 @@
+2026-03-10 12:26:01,011 - __main__ - INFO - ==================================================
+2026-03-10 12:26:01,011 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-10 12:26:01,011 - __main__ - INFO - ==================================================
+2026-03-10 12:26:01,129 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-10 12:26:01,129 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-10 12:26:01,911 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-10 12:26:03,962 - src.face_recognizer - INFO - Found 2 image files in C:\face_recognition_robot\known_faces
+2026-03-10 12:26:03,962 - src.face_recognizer - INFO - Face 'CEO Sir' already exists, skipping...
+2026-03-10 12:26:03,962 - src.face_recognizer - INFO - Face 'Principal Maam' already exists, skipping...
+2026-03-10 12:26:03,965 - __main__ - INFO - No new faces to load
+2026-03-10 12:26:03,969 - __main__ - INFO -    Total known faces: 4
+2026-03-10 12:26:03,969 - __main__ - INFO -    • CEO_Sir: recognized 0 times
+2026-03-10 12:26:03,970 - __main__ - INFO -    • Principal_Maam: recognized 0 times
+2026-03-10 12:26:03,970 - __main__ - INFO -    • CEO Sir: recognized 0 times
+2026-03-10 12:26:03,970 - __main__ - INFO -    • Principal Maam: recognized 0 times
+2026-03-10 12:26:04,614 - __main__ - INFO - 
+==================================================
+2026-03-10 12:26:04,618 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-10 12:26:04,619 - __main__ - INFO - ==================================================
+
+2026-03-10 12:26:19,715 - __main__ - INFO - Quit command received
+2026-03-10 12:26:20,165 - __main__ - INFO - 
+==================================================
+2026-03-10 12:26:20,174 - __main__ - INFO - ==================================================
+2026-03-10 12:26:20,176 - __main__ - INFO - Runtime: 0:00:16.203313
+2026-03-10 12:26:20,180 - __main__ - INFO - 
+Face Database:
+2026-03-10 12:26:20,180 - __main__ - INFO -   Total known faces: 4
+2026-03-10 12:26:20,180 - __main__ - INFO -   Total recognitions: 3
+2026-03-10 12:26:20,182 - __main__ - INFO - 
+Session Statistics:
+2026-03-10 12:26:20,182 - __main__ - INFO -   Frames processed: 14
+2026-03-10 12:26:20,182 - __main__ - INFO -   Faces detected: 14
+2026-03-10 12:26:20,182 - __main__ - INFO -   Recognitions: 3
+2026-03-10 12:26:20,182 - __main__ - INFO -   Unknown faces: 11
+2026-03-10 12:26:20,182 - __main__ - INFO - 
+Conversation Statistics:
+2026-03-10 12:26:20,182 - __main__ - INFO -   Total exchanges: 2
+2026-03-10 12:26:20,184 - __main__ - INFO -   Robot messages: 2
+2026-03-10 12:26:20,184 - __main__ - INFO -   User messages: 0
+2026-03-10 12:26:20,184 - __main__ - INFO - ==================================================
+2026-03-10 12:26:20,184 - __main__ - INFO - 
+==================================================
+2026-03-10 12:26:20,188 - __main__ - INFO - ==================================================
+2026-03-10 12:28:51,263 - __main__ - INFO - ==================================================
+2026-03-10 12:28:51,263 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-10 12:28:51,263 - __main__ - INFO - ==================================================
+2026-03-10 12:28:51,263 - src.face_recognizer - ERROR - Error loading encodings: Ran out of input
+2026-03-10 12:28:51,350 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-10 12:28:51,350 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-10 12:28:52,106 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-10 12:28:54,145 - src.face_recognizer - INFO - Found 2 image files in C:\face_recognition_robot\known_faces
+2026-03-10 12:29:03,495 - __main__ - INFO -    Total known faces: 2
+2026-03-10 12:29:03,495 - __main__ - INFO -    • CEO Sir: recognized 0 times
+2026-03-10 12:29:03,495 - __main__ - INFO -    • Principal Maam: recognized 0 times
+2026-03-10 12:29:04,090 - __main__ - INFO - 
+==================================================
+2026-03-10 12:29:04,093 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-10 12:29:04,093 - __main__ - INFO - ==================================================
+
+2026-03-10 12:31:02,074 - __main__ - INFO - Quit command received
+2026-03-10 12:31:02,485 - __main__ - INFO - 
+==================================================
+2026-03-10 12:31:02,492 - __main__ - INFO - ==================================================
+2026-03-10 12:31:02,492 - __main__ - INFO - Runtime: 0:01:58.996266
+2026-03-10 12:31:02,492 - __main__ - INFO - 
+Face Database:
+2026-03-10 12:31:02,493 - __main__ - INFO -   Total known faces: 2
+2026-03-10 12:31:02,493 - __main__ - INFO -   Total recognitions: 22
+2026-03-10 12:31:02,494 - __main__ - INFO - 
+Session Statistics:
+2026-03-10 12:31:02,494 - __main__ - INFO -   Frames processed: 147
+2026-03-10 12:31:02,495 - __main__ - INFO -   Faces detected: 88
+2026-03-10 12:31:02,496 - __main__ - INFO -   Recognitions: 22
+2026-03-10 12:31:02,496 - __main__ - INFO -   Unknown faces: 66
+2026-03-10 12:31:02,505 - __main__ - INFO - 
+Conversation Statistics:
+2026-03-10 12:31:02,506 - __main__ - INFO -   Total exchanges: 6
+2026-03-10 12:31:02,506 - __main__ - INFO -   Robot messages: 6
+2026-03-10 12:31:02,507 - __main__ - INFO -   User messages: 0
+2026-03-10 12:31:02,507 - __main__ - INFO - ==================================================
+2026-03-10 12:31:02,507 - __main__ - INFO - 
+==================================================
+2026-03-10 12:31:02,510 - __main__ - INFO - ==================================================
+2026-03-10 12:45:16,881 - __main__ - INFO - ==================================================
+2026-03-10 12:45:16,881 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-10 12:45:16,881 - __main__ - INFO - ==================================================
+2026-03-10 12:45:16,986 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-10 12:45:17,004 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-10 12:45:17,756 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-10 12:45:19,795 - src.face_recognizer - INFO - Found 2 image files in C:\face_recognition_robot\known_faces
+2026-03-10 12:45:19,796 - src.face_recognizer - INFO - Face 'CEO Sir' already exists, skipping...
+2026-03-10 12:45:19,796 - src.face_recognizer - INFO - Face 'Principal Maam' already exists, skipping...
+2026-03-10 12:45:19,798 - __main__ - INFO - No new faces to load
+2026-03-10 12:45:19,802 - __main__ - INFO -    Total known faces: 2
+2026-03-10 12:45:19,802 - __main__ - INFO -    • CEO Sir: recognized 0 times
+2026-03-10 12:45:19,802 - __main__ - INFO -    • Principal Maam: recognized 0 times
+2026-03-10 12:45:20,525 - __main__ - INFO - 
+==================================================
+2026-03-10 12:45:20,528 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-10 12:45:20,528 - __main__ - INFO - ==================================================
+
+2026-03-10 12:46:39,147 - __main__ - INFO - 
+==================================================
+2026-03-10 12:46:39,149 - __main__ - INFO - ==================================================
+2026-03-10 12:46:39,150 - __main__ - INFO - Runtime: 0:01:19.347740
+2026-03-10 12:46:39,150 - __main__ - INFO - 
+Face Database:
+2026-03-10 12:46:39,150 - __main__ - INFO -   Total known faces: 2
+2026-03-10 12:46:39,150 - __main__ - INFO -   Total recognitions: 0
+2026-03-10 12:46:39,151 - __main__ - INFO - 
+Session Statistics:
+2026-03-10 12:46:39,151 - __main__ - INFO -   Frames processed: 56
+2026-03-10 12:46:39,151 - __main__ - INFO -   Faces detected: 43
+2026-03-10 12:46:39,151 - __main__ - INFO -   Recognitions: 0
+2026-03-10 12:46:39,151 - __main__ - INFO -   Unknown faces: 43
+2026-03-10 12:46:39,151 - __main__ - INFO - 
+Conversation Statistics:
+2026-03-10 12:46:39,151 - __main__ - INFO -   Total exchanges: 9
+2026-03-10 12:46:39,152 - __main__ - INFO -   Robot messages: 9
+2026-03-10 12:46:39,152 - __main__ - INFO -   User messages: 0
+2026-03-10 12:46:39,152 - __main__ - INFO - ==================================================
+2026-03-10 12:48:25,751 - __main__ - INFO - Quit command received
+2026-03-10 12:48:26,231 - __main__ - INFO - 
+==================================================
+2026-03-10 12:48:26,335 - __main__ - INFO - ==================================================
+2026-03-10 12:48:26,335 - __main__ - INFO - Runtime: 0:03:06.532689
+2026-03-10 12:48:26,335 - __main__ - INFO - 
+Face Database:
+2026-03-10 12:48:26,336 - __main__ - INFO -   Total known faces: 2
+2026-03-10 12:48:26,336 - __main__ - INFO -   Total recognitions: 0
+2026-03-10 12:48:26,336 - __main__ - INFO - 
+Session Statistics:
+2026-03-10 12:48:26,336 - __main__ - INFO -   Frames processed: 141
+2026-03-10 12:48:26,336 - __main__ - INFO -   Faces detected: 90
+2026-03-10 12:48:26,337 - __main__ - INFO -   Recognitions: 0
+2026-03-10 12:48:26,337 - __main__ - INFO -   Unknown faces: 90
+2026-03-10 12:48:26,337 - __main__ - INFO - 
+Conversation Statistics:
+2026-03-10 12:48:26,338 - __main__ - INFO -   Total exchanges: 18
+2026-03-10 12:48:26,338 - __main__ - INFO -   Robot messages: 16
+2026-03-10 12:48:26,338 - __main__ - INFO -   User messages: 2
+2026-03-10 12:48:26,339 - __main__ - INFO - ==================================================
+2026-03-10 12:48:26,339 - __main__ - INFO - 
+==================================================
+2026-03-10 12:48:26,341 - __main__ - INFO - ==================================================
+2026-03-10 13:05:55,094 - __main__ - INFO - ==================================================
+2026-03-10 13:05:55,094 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-10 13:05:55,095 - __main__ - INFO - ==================================================
+2026-03-10 13:05:55,197 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-10 13:05:55,198 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-10 13:05:56,053 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-10 13:05:58,093 - __main__ - INFO - Set soft female voice
+2026-03-10 13:05:58,096 - src.face_recognizer - INFO - Found 2 image files in C:\face_recognition_robot\known_faces
+2026-03-10 13:05:58,098 - src.face_recognizer - INFO - Face 'CEO Sir' already exists, skipping...
+2026-03-10 13:05:58,098 - src.face_recognizer - INFO - Face 'Principal Maam' already exists, skipping...
+2026-03-10 13:05:58,101 - __main__ - INFO - No new faces to load
+2026-03-10 13:05:58,102 - __main__ - INFO -    Total known faces: 2
+2026-03-10 13:05:58,102 - __main__ - INFO -    • CEO Sir: recognized 0 times
+2026-03-10 13:05:58,104 - __main__ - INFO -    • Principal Maam: recognized 0 times
+2026-03-10 13:05:58,780 - __main__ - INFO - 
+==================================================
+2026-03-10 13:05:58,783 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-10 13:05:58,783 - __main__ - INFO - ==================================================
+
+2026-03-10 13:06:58,289 - __main__ - INFO - Quit command received
+2026-03-10 13:07:02,683 - __main__ - INFO - 
+==================================================
+2026-03-10 13:07:02,686 - __main__ - INFO - ==================================================
+2026-03-10 13:10:13,330 - __main__ - INFO - ==================================================
+2026-03-10 13:10:13,330 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-10 13:10:13,331 - __main__ - INFO - ==================================================
+2026-03-10 13:10:13,423 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-10 13:10:13,423 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-10 13:10:14,205 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-10 13:10:16,242 - __main__ - INFO - Set soft female voice
+2026-03-10 13:10:16,242 - __main__ - INFO - 
+Loading known faces...
+2026-03-10 13:10:16,243 - src.face_recognizer - INFO - Found 2 image files in C:\face_recognition_robot\known_faces
+2026-03-10 13:10:16,243 - src.face_recognizer - INFO - Face 'CEO Sir' already exists, skipping...
+2026-03-10 13:10:16,243 - src.face_recognizer - INFO - Face 'Principal Maam' already exists, skipping...
+2026-03-10 13:10:16,246 - __main__ - INFO - No new faces to load
+2026-03-10 13:10:16,248 - __main__ - INFO - 
+Current Face Database:
+2026-03-10 13:10:16,248 - __main__ - INFO -   Total known faces: 2
+2026-03-10 13:10:16,248 - __main__ - INFO -   • CEO Sir: recognized 0 times
+2026-03-10 13:10:16,248 - __main__ - INFO -   • Principal Maam: recognized 0 times
+2026-03-10 13:10:16,886 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-10 13:10:16,886 - __main__ - INFO - 
+==================================================
+2026-03-10 13:10:16,886 - __main__ - INFO - Robot is now running with dark theme
+2026-03-10 13:10:16,887 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-10 13:10:16,887 - __main__ - INFO - ==================================================
+
+2026-03-10 13:11:38,938 - src.utils - INFO - Saved unknown face: C:\face_recognition_robot\unknown_faces\unknown_20260310_131138.png
+2026-03-10 13:11:38,939 - __main__ - INFO - Saved unknown face to C:\face_recognition_robot\unknown_faces\unknown_20260310_131138.png
+2026-03-10 13:12:05,270 - __main__ - INFO - Quit command received
+2026-03-10 13:12:07,652 - __main__ - INFO - Camera stopped
+2026-03-10 13:12:09,708 - __main__ - INFO - 
+==================================================
+2026-03-10 13:12:09,708 - __main__ - INFO - Robot shutdown complete
+2026-03-10 13:12:09,708 - __main__ - INFO - ==================================================
+2026-03-10 13:12:40,441 - __main__ - INFO - ==================================================
+2026-03-10 13:12:40,441 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-10 13:12:40,442 - __main__ - INFO - ==================================================
+2026-03-10 13:12:40,537 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-10 13:12:40,537 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-10 13:12:41,286 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-10 13:12:43,333 - __main__ - INFO - Set soft female voice
+2026-03-10 13:12:43,333 - __main__ - INFO - 
+Loading known faces...
+2026-03-10 13:12:43,333 - src.face_recognizer - INFO - Found 2 image files in C:\face_recognition_robot\known_faces
+2026-03-10 13:12:43,335 - src.face_recognizer - INFO - Face 'CEO Sir' already exists, skipping...
+2026-03-10 13:12:43,335 - src.face_recognizer - INFO - Face 'Principal Maam' already exists, skipping...
+2026-03-10 13:12:43,338 - __main__ - INFO - No new faces to load
+2026-03-10 13:12:43,338 - __main__ - INFO - 
+Current Face Database:
+2026-03-10 13:12:43,338 - __main__ - INFO -   Total known faces: 2
+2026-03-10 13:12:43,338 - __main__ - INFO -   • CEO Sir: recognized 0 times
+2026-03-10 13:12:43,339 - __main__ - INFO -   • Principal Maam: recognized 0 times
+2026-03-10 13:12:43,991 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-10 13:12:43,992 - __main__ - INFO - 
+==================================================
+2026-03-10 13:12:43,992 - __main__ - INFO - Robot is now running with dark theme
+2026-03-10 13:12:43,992 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-10 13:12:43,993 - __main__ - INFO - ==================================================
+
+2026-03-10 13:13:32,357 - __main__ - INFO - Recognized: Principal Maam (confidence: 64.59%)
+2026-03-10 13:13:43,279 - __main__ - INFO - Recognized: Principal Maam (confidence: 59.57%)
+2026-03-10 13:13:52,688 - __main__ - INFO - Recognized: CEO Sir (confidence: 76.56%)
+2026-03-10 13:14:03,697 - __main__ - INFO - Recognized: CEO Sir (confidence: 72.08%)
+2026-03-10 13:16:15,748 - __main__ - INFO - Quit command received
+2026-03-10 13:16:18,118 - __main__ - INFO - Camera stopped
+2026-03-10 13:16:20,133 - __main__ - INFO - 
+==================================================
+2026-03-10 13:16:20,133 - __main__ - INFO - Robot shutdown complete
+2026-03-10 13:16:20,133 - __main__ - INFO - ==================================================
