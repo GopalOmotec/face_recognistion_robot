@@ -38,7 +38,7 @@ class ProfessionalFaceRobot:
         self.colors = {
             'bg_dark': (10, 10, 10),        # Almost black
             'bg_medium': (20, 20, 20),       # Very dark gray
-            'bg_light': (30, 30, 30),         # Dark gray
+            'bg_light': (10, 10, 10),         # Dark gray
             'accent_blue': (0, 120, 255),     # Professional blue
             'accent_green': (0, 200, 0),      # Success green
             'accent_orange': (255, 140, 0),   # Warning orange
@@ -59,8 +59,8 @@ class ProfessionalFaceRobot:
         self.recognizer = FaceRecognizer()
         self.robot = RobotDialog(robot_name=ROBOT_NAME)
         
-        # Make robot voice softer
-        self.make_robot_softer()
+        # Set Indian Female voice
+        self.set_indian_female_voice()
         
         # Load faces from folder
         self.load_known_faces()
@@ -77,32 +77,60 @@ class ProfessionalFaceRobot:
         # Add welcome message to chat (no emojis)
         self.add_chat_message("robot", f"Hello, I am {ROBOT_NAME}, your AI assistant. I can recognize faces and chat with you.")
         self.add_chat_message("robot", "Press 't' for conversation or let me recognize your face.")
+        
+        # Update robot with initial known faces
+        self.robot.update_known_faces(self.recognizer.known_face_names)
+    
+    def set_indian_female_voice(self):
+        """Set Indian Female voice for the robot"""
+        voices = self.robot.tts_engine.getProperty('voices')
+        
+        logger.info("Available voices for Indian Female selection:")
+        indian_voice_found = False
+        
+        # First, try to find an Indian voice
+        indian_keywords = ['indian', 'hin', 'hindi', 'rakesh', 'heera', 'lekha', 'vardan', 'dhwani']
+        
+        for i, voice in enumerate(voices):
+            logger.info(f"Voice {i}: ID={voice.id}, Name={voice.name}")
+            voice_lower = voice.name.lower() + " " + voice.id.lower()
+            
+            # Check for Indian voice
+            if any(keyword in voice_lower for keyword in indian_keywords):
+                self.robot.tts_engine.setProperty('voice', voice.id)
+                logger.info(f"✅ Selected Indian voice: {voice.name}")
+                indian_voice_found = True
+                break
+        
+        # If no Indian voice, try to find a female voice with Indian-like parameters
+        if not indian_voice_found:
+            for voice in voices:
+                voice_lower = voice.name.lower()
+                if 'female' in voice_lower:
+                    self.robot.tts_engine.setProperty('voice', voice.id)
+                    logger.info(f"✅ Selected female voice as fallback: {voice.name}")
+                    indian_voice_found = True
+                    break
+        
+        # If still no voice, use default but set parameters for Indian-like tone
+        if not indian_voice_found and len(voices) > 0:
+            self.robot.tts_engine.setProperty('voice', voices[0].id)
+            logger.info(f"✅ Using default voice: {voices[0].name}")
+        
+        # Set voice parameters for Indian accent simulation
+        self.robot.tts_engine.setProperty('rate', 150)  # Slightly slower for clarity
+        self.robot.tts_engine.setProperty('volume', 0.9)
+        
+        # Try to set pitch if available (helps with accent)
+        try:
+            self.robot.tts_engine.setProperty('pitch', 120)  # Slightly higher pitch
+        except:
+            pass  # Pitch not available in all engines
     
     def make_robot_softer(self):
         """Make robot voice softer and more pleasant"""
-        # Get current voice properties
-        voices = self.robot.tts_engine.getProperty('voices')
-        
-        # Set softer voice parameters
-        self.robot.tts_engine.setProperty('rate', 150)  # Slower speed
-        self.robot.tts_engine.setProperty('volume', 0.8)  # Lower volume
-        
-        # Try to find a pleasant voice
-        for voice in voices:
-            if 'female' in voice.name.lower() or 'zira' in voice.name.lower():
-                self.robot.tts_engine.setProperty('voice', voice.id)
-                logger.info("Set soft female voice")
-                break
-        
-        # Override speak method to remove emojis
-        original_speak = self.robot.speak
-        
-        def soft_speak(text):
-            # Remove any emojis that might be in the text
-            clean_text = self.remove_emojis(text)
-            original_speak(clean_text)
-        
-        self.robot.speak = soft_speak
+        # This method is now integrated into set_indian_female_voice
+        pass
     
     def remove_emojis(self, text):
         """Remove emojis from text"""
@@ -131,6 +159,8 @@ class ProfessionalFaceRobot:
         if count > 0:
             logger.info(f"Successfully loaded {count} new faces")
             self.add_chat_message("robot", f"I have learned {count} new face{'s' if count > 1 else ''}.")
+            # Update robot's known faces list
+            self.robot.update_known_faces(self.recognizer.known_face_names)
         else:
             logger.info("No new faces to load")
         
@@ -200,9 +230,8 @@ class ProfessionalFaceRobot:
             if current_time - last_greeting > GREETING_COOLDOWN:
                 logger.info(f"Recognized: {name} (confidence: {confidence:.2%})")
                 
-                # Professional greeting (no emojis)
-                greeting = f"Welcome back, {name}. It is good to see you again."
-                self.robot.speak(greeting)
+                # Use the new greeting format from robot_dialog
+                self.robot.greet_person(name)
                 self.add_chat_message("robot", f"Welcome back, {name} (confidence: {confidence:.1%})")
                 
                 # Update last greeting time
@@ -231,6 +260,8 @@ class ProfessionalFaceRobot:
             self.robot.speak(f"Thank you. I will remember you as {name}.")
             self.add_chat_message("robot", f"Nice to meet you, {name}. I have added your face to my database.")
             logger.info(f"Added {name} to known faces")
+            # Update robot's known faces list
+            self.robot.update_known_faces(self.recognizer.known_face_names)
         else:
             self.robot.speak("I apologize, I could not add your face. Please try again.")
             self.add_chat_message("robot", "I could not add your face. Please try again.")
@@ -240,7 +271,7 @@ class ProfessionalFaceRobot:
         return success
     
     def draw_dark_ui(self, frame, faces):
-        """Draw dark theme UI with chat interface (no emojis)"""
+       
         h, w = frame.shape[:2]
         
         # Create a copy for the UI
@@ -428,7 +459,7 @@ class ProfessionalFaceRobot:
         
         # Initial greeting
         logger.info("\n" + "="*50)
-        logger.info("Robot is now running with dark theme")
+        logger.info("Robot is now running")
         logger.info("Press 'q' to quit, 's' to save unknown face, 'a' to add new face")
         logger.info("="*50 + "\n")
         
@@ -456,7 +487,7 @@ class ProfessionalFaceRobot:
                 display_frame = self.draw_dark_ui(frame, self.current_faces if self.frame_count % FRAME_SKIP == 0 else [])
                 
                 # Display frame
-                cv2.imshow('AI Robot Assistant - Dark Theme', display_frame)
+                cv2.imshow('AI Robot Assistant', display_frame)
                 
                 # Handle key presses
                 key = cv2.waitKey(1) & 0xFF
@@ -510,9 +541,9 @@ class ProfessionalFaceRobot:
                     
                     if self.current_faces and self.current_faces[0]['name'] != "Unknown":
                         name = self.current_faces[0]['name']
-                        conversation = self.robot.have_professional_conversation(name=name, turns=2)
+                        conversation = self.robot.have_conversation(name=name, turns=2)
                     else:
-                        conversation = self.robot.have_professional_conversation(turns=2)
+                        conversation = self.robot.have_conversation(turns=2)
                     
                     # Add conversation to chat
                     for speaker, text in conversation:

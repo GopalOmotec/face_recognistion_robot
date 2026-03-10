@@ -25,7 +25,7 @@ MODEL = 'hog'  # 'hog' is faster, 'cnn' is more accurate but slower
 NUM_JITTERS = 10  # Number of times to re-sample faces for encoding
 
 # Robot settings
-ROBOT_NAME = "ProfRobot"
+ROBOT_NAME = "Robot"
 WAKE_WORD = "robot"
 GREETING_COOLDOWN = 10  # Seconds between greetings for same person
 CONFIDENCE_THRESHOLD = 0.5  # Minimum confidence for recognition
