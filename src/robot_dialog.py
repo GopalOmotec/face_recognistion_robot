@@ -1,3 +1,5 @@
+# src/robot_dialog.py
+
 import pyttsx3
 import speech_recognition as sr
 import threading
@@ -6,6 +8,18 @@ import time
 import random
 import logging
 from datetime import datetime
+import re
+import os
+import sys
+from gtts import gTTS
+import playsound
+import tempfile
+
+# Fix Windows console encoding
+if sys.platform == 'win32':
+    import codecs
+    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+    sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
 
 logger = logging.getLogger(__name__)
 
@@ -16,12 +30,24 @@ class RobotDialog:
         self.speaking = False
         self.listening = False
         self.conversation_history = []
-        self.known_faces_list = []  # Will be updated from main app
-        self.last_greeting_time = {}  # Track last greeting time per person
+        self.known_faces_list = []
+        self.last_greeting_time = {}
         
-        # Initialize text-to-speech
-        self.tts_engine = pyttsx3.init()
-        self.set_female_voice()  # Force female voice
+        # Language settings
+        self.current_language = 'en'
+        self.hindi_mode_active = False
+        self.hindi_intro_given = False
+        
+        # Use gTTS for better Hindi voice
+        self.use_gtts = True
+        
+        # Initialize pyttsx3 for English fallback
+        self.tts_engine = None
+        try:
+            self.tts_engine = pyttsx3.init()
+            self.set_english_voice()
+        except:
+            logger.warning("pyttsx3 initialization failed, using gTTS only")
         
         # Initialize speech recognition
         self.setup_speech_recognition()
@@ -33,82 +59,110 @@ class RobotDialog:
         # Dialog templates
         self.init_dialog_templates()
     
-    def set_female_voice(self):
-        """Force female voice selection"""
-        voices = self.tts_engine.getProperty('voices')
-        
-        logger.info("="*50)
-        logger.info("SELECTING FEMALE VOICE")
-        logger.info("="*50)
-        
-        female_voice_found = False
-        
-        # List all available voices
-        for i, voice in enumerate(voices):
-            logger.info(f"Voice {i}: {voice.name} - ID: {voice.id}")
-        
-        # PRIORITY 1: Look for explicit female voices (Zira is Microsoft's female voice)
-        for voice in voices:
-            voice_lower = voice.name.lower()
-            if 'zira' in voice_lower or 'female' in voice_lower:
-                self.tts_engine.setProperty('voice', voice.id)
-                logger.info(f"✅ SELECTED FEMALE VOICE: {voice.name}")
-                female_voice_found = True
-                break
-        
-        # PRIORITY 2: Look for any voice that might be female (contains 'female' in description)
-        if not female_voice_found:
+    def set_english_voice(self):
+        """Set English voice for pyttsx3"""
+        try:
+            voices = self.tts_engine.getProperty('voices')
             for voice in voices:
-                voice_lower = voice.name.lower()
-                if 'female' in voice_lower:
+                if 'zira' in voice.name.lower() or 'david' in voice.name.lower():
                     self.tts_engine.setProperty('voice', voice.id)
-                    logger.info(f"✅ SELECTED FEMALE VOICE: {voice.name}")
-                    female_voice_found = True
                     break
+            self.tts_engine.setProperty('rate', 160)
+            self.tts_engine.setProperty('volume', 0.9)
+        except:
+            pass
+    
+    def speak_with_gtts(self, text, lang='hi'):
+        """Use Google TTS for better Hindi pronunciation"""
+        try:
+            # Create temporary file
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as fp:
+                temp_filename = fp.name
+            
+            # Generate speech
+            tts = gTTS(text=text, lang=lang, slow=False)
+            tts.save(temp_filename)
+            
+            # Play the audio
+            playsound.playsound(temp_filename)
+            
+            # Clean up
+            try:
+                os.unlink(temp_filename)
+            except:
+                pass
+            return True
+        except Exception as e:
+            logger.error(f"gTTS error: {e}")
+            return False
+    
+    def safe_log(self, message):
+        """Safely log messages without Unicode errors"""
+        try:
+            # Convert to string if needed
+            if not isinstance(message, str):
+                message = str(message)
+            # Remove non-ASCII characters for logging
+            ascii_message = message.encode('ascii', errors='ignore').decode('ascii')
+            logger.info(ascii_message)
+        except:
+            logger.info("[Message logged]")
+    
+    def detect_language(self, text):
+        """Detect if text is Hindi or English"""
+        if not text:
+            return 'en'
         
-        # PRIORITY 3: If on Windows, try to specifically get Microsoft Zira
-        if not female_voice_found:
-            for voice in voices:
-                if 'microsoft' in voice.name.lower() and 'english' in voice.name.lower():
-                    # Usually the second voice is female (David is male, Zira is female)
-                    if 'david' not in voice.name.lower():
-                        self.tts_engine.setProperty('voice', voice.id)
-                        logger.info(f"✅ SELECTED VOICE: {voice.name}")
-                        female_voice_found = True
-                        break
+        # Hindi Unicode range
+        hindi_pattern = re.compile(r'[\u0900-\u097F]')
         
-        # Last resort: use the second voice if available (often female on Windows)
-        if not female_voice_found and len(voices) > 1:
-            self.tts_engine.setProperty('voice', voices[1].id)
-            logger.info(f"✅ USING SECOND AVAILABLE VOICE: {voices[1].name}")
+        # Count Hindi characters
+        hindi_chars = len(hindi_pattern.findall(text))
+        total_chars = len(text.strip())
         
-        # Set voice parameters for clear, pleasant tone
-        self.tts_engine.setProperty('rate', 160)  # Moderate speed
-        self.tts_engine.setProperty('volume', 0.9)  # Clear volume
+        if total_chars > 0 and (hindi_chars / total_chars) > 0.1:
+            return 'hi'
         
-        logger.info("="*50)
+        # Check for common Hindi words in Roman script
+        hindi_words = ['namaste', 'kaise', 'ho', 'kya', 'hai', 'main', 'tum', 'aap', 
+                      'hum', 'nahi', 'mere', 'tera', 'mera', 'acha', 'theek', 'thik',
+                      'kaisa', 'kahan', 'kyon', 'kab', 'kaun', 'hindi', 'bolo']
+        
+        words = text.lower().split()
+        for word in words:
+            if word in hindi_words:
+                return 'hi'
+        
+        return 'en'
     
     def update_known_faces(self, face_list):
         """Update the list of known faces from main app"""
         self.known_faces_list = face_list
-        logger.info(f"Updated known faces list: {face_list}")
+        self.safe_log(f"Updated known faces list: {face_list}")
     
     def setup_speech_recognition(self):
-        """Setup speech recognition with better parameters"""
+        """Setup speech recognition"""
         self.recognizer = sr.Recognizer()
         self.microphone = sr.Microphone()
         
-        # Adjust for ambient noise
         with self.microphone as source:
-            logger.info("Calibrating microphone for ambient noise...")
-            self.recognizer.adjust_for_ambient_noise(source, duration=2)
+            self.safe_log("Calibrating microphone...")
+            self.recognizer.adjust_for_ambient_noise(source, duration=1)
             self.recognizer.energy_threshold = 3000
             self.recognizer.dynamic_energy_threshold = True
     
     def init_dialog_templates(self):
-        """Initialize professional dialog templates"""
+        """Initialize dialog templates with proper Hindi strings"""
         
-        # Time-based greetings
+        # Hindi time greetings
+        self.time_greetings_hi = {
+            'morning': "सुप्रभात",
+            'afternoon': "नमस्ते",
+            'evening': "शुभ संध्या",
+            'night': "शुभ रात्रि"
+        }
+        
+        # English time greetings
         self.time_greetings = {
             'morning': "Good morning",
             'afternoon': "Good afternoon",
@@ -116,7 +170,20 @@ class RobotDialog:
             'night': "Good evening"
         }
         
-        # Professional questions
+        # Hindi questions
+        self.professional_questions_hi = [
+            "आपका दिन कैसा चल रहा है?",
+            "आप अभी क्या काम कर रहे हैं?",
+            "क्या मैं आपकी कोई मदद कर सकता हूँ?",
+            "क्या आप कोई अपडेट देखना चाहेंगे?",
+            "मैं आपका काम कैसे आसान बना सकता हूँ?",
+            "आप क्या चर्चा करना चाहेंगे?",
+            "क्या आपको कोई जानकारी चाहिए?",
+            "आज आप किन कार्यों पर ध्यान दे रहे हैं?",
+            "मैं किन लोगों को पहचान सकता हूँ?"
+        ]
+        
+        # English questions
         self.professional_questions = [
             "How is your day going?",
             "What work are you doing currently?",
@@ -125,54 +192,73 @@ class RobotDialog:
             "How can I make your work easier?",
             "What would you like to discuss?",
             "Do you need any information?",
-            "Would you like me to show you any features?",
             "What tasks are you focusing on today?",
-            "How can I assist you with your work?",
-            "Whom can you recognize?"  # New question added
+            "Whom can I recognize?"
         ]
         
-        # Responses
-        self.responses = {
+        # Hindi responses
+        self.responses_hi = {
+            'greeting': [
+                "नमस्ते! मैं आपकी कैसे मदद कर सकता हूँ?",
+                "नमस्ते! आपसे मिलकर अच्छा लगा।"
+            ],
+            'status': [
+                "मैं ठीक हूँ, पूछने के लिए धन्यवाद।",
+                "सभी प्रणालियाँ सही से काम कर रही हैं।"
+            ],
+            'capabilities': [
+                f"मैं चेहरे पहचान सकता हूँ और बातचीत कर सकता हूँ। मेरा नाम {self.robot_name} है।",
+                "मैं लोगों को पहचान सकता हूँ और जानकारी में मदद कर सकता हूँ।"
+            ],
+            'thanks': [
+                "आपका स्वागत है!",
+                "आपकी मदद करके खुशी हुई!"
+            ],
+            'farewell': [
+                "नमस्ते! आपका दिन शुभ हो।",
+                "फिर मिलेंगे! अपना ख्याल रखें।"
+            ],
+            'unknown': [
+                "समझ गया। कृपया और बताएं।",
+                "ठीक है। आप और क्या चर्चा करना चाहेंगे?"
+            ],
+            'name_response': [
+                "आपसे मिलकर अच्छा लगा, {name}। मैं आपकी कैसे सहायता कर सकता हूँ?"
+            ],
+            'hindi_intro': [
+                "मैं हिंदी में भी बात कर सकता हूँ। कृपया हिंदी में बोलें।",
+                "जी हां, मैं हिंदी में भी बात कर सकता हूँ। कृपया बोलिए।"
+            ]
+        }
+        
+        # English responses
+        self.responses_en = {
             'greeting': [
                 "Hello! How may I help you?",
-                "Hello! Nice to meet you.",
-                "Greetings! How can I assist you?"
+                "Hello! Nice to meet you."
             ],
             'status': [
                 "I am doing well, thank you for asking.",
-                "All systems are working properly.",
-                "I am functioning well, thank you."
+                "All systems are working properly."
             ],
             'capabilities': [
                 f"I can recognize faces and have conversations. My name is {self.robot_name}.",
-                "I can identify people and help you with information.",
-                "I am designed for face recognition and professional interaction."
+                "I can identify people and help you with information."
             ],
             'thanks': [
                 "You are welcome!",
-                "Happy to help you!",
-                "My pleasure!"
+                "Happy to help you!"
             ],
             'farewell': [
                 "Goodbye! Have a nice day.",
-                "See you later! Take care.",
-                "Bye bye! Come back soon."
+                "See you later! Take care."
             ],
             'unknown': [
                 "I see. Please tell me more.",
-                "Okay. What else would you like to discuss?",
-                "I understand. Please continue.",
-                "Thank you for sharing that."
+                "Okay. What else would you like to discuss?"
             ],
             'name_response': [
-                "Nice to meet you, Mr. {name}. How can I assist you today?",
-                "Pleasure to meet you, {name}. How may I help you?",
-                "Welcome Mr. {name}. What can I do for you today?"
-            ],
-            'recognize_response': [
-                "I can recognize {count} people: {names}",
-                "The people I know are: {names}",
-                "I can recognize {names}"
+                "Nice to meet you, {name}. How can I assist you today?"
             ]
         }
     
@@ -181,189 +267,195 @@ class RobotDialog:
         current_hour = datetime.now().hour
         
         if current_hour < 12:
-            return self.time_greetings['morning']
+            time_period = 'morning'
         elif current_hour < 17:
-            return self.time_greetings['afternoon']
+            time_period = 'afternoon'
         elif current_hour < 21:
-            return self.time_greetings['evening']
+            time_period = 'evening'
         else:
-            return self.time_greetings['night']
+            time_period = 'night'
+        
+        if self.current_language == 'hi':
+            return self.time_greetings_hi[time_period]
+        return self.time_greetings[time_period]
     
     def _process_speech_queue(self):
-        """Process speech queue in background"""
+        """Process speech queue"""
         while True:
             try:
                 text = self.speech_queue.get(timeout=1)
                 self.speaking = True
-                logger.info(f"🤖 Robot says: {text}")
-                self.tts_engine.say(text)
-                self.tts_engine.runAndWait()
+                
+                # Log safely
+                self.safe_log(f"Robot says: {text}")
+                
+                # Speak based on language
+                if self.current_language == 'hi' and self.use_gtts:
+                    # Use gTTS for Hindi
+                    self.speak_with_gtts(text, 'hi')
+                else:
+                    # Try pyttsx3 first for English
+                    if self.tts_engine:
+                        try:
+                            self.tts_engine.say(text)
+                            self.tts_engine.runAndWait()
+                        except:
+                            # Fallback to gTTS
+                            self.speak_with_gtts(text, 'en')
+                    else:
+                        # Fallback to gTTS
+                        self.speak_with_gtts(text, 'en' if self.current_language == 'en' else 'hi')
+                
                 self.speaking = False
-                self.conversation_history.append(("robot", text, datetime.now().isoformat()))
                 self.speech_queue.task_done()
             except queue.Empty:
                 continue
             except Exception as e:
-                logger.error(f"Speech error: {e}")
+                self.safe_log(f"Speech error: {str(e)}")
                 self.speaking = False
     
     def speak(self, text):
         """Add text to speech queue"""
-        self.speech_queue.put(text)
+        if text and len(text.strip()) > 0:
+            self.speech_queue.put(text)
     
     def greet_person(self, name):
-        """
-        Greet a person with time-based greeting
-        Only says the greeting once per session
-        """
+        """Greet a person"""
         current_time = time.time()
         
-        # Check if we've greeted this person recently (within last 30 seconds)
         last_greeting = self.last_greeting_time.get(name, 0)
         if current_time - last_greeting < 30:
-            return None  # Skip greeting if said recently
+            return None
         
         time_greeting = self.get_time_greeting()
         
-        # Create the greeting
-        full_greeting = f"{time_greeting} {name}, Nice to meet you Mr. {name}, How can I assist you today?"
+        if self.current_language == 'hi':
+            full_greeting = f"{time_greeting} {name}, आपसे मिलकर अच्छा लगा। मैं आपकी कैसे सहायता कर सकता हूँ?"
+        else:
+            full_greeting = f"{time_greeting} {name}, nice to meet you. How can I assist you today?"
         
         self.speak(full_greeting)
-        
-        # Update last greeting time
         self.last_greeting_time[name] = current_time
-        
-        # Log and store in history
-        logger.info(f"Greeted {name} with: {full_greeting}")
-        self.conversation_history.append(("robot", full_greeting, datetime.now().isoformat()))
-        
         return full_greeting
     
     def ask_question(self):
-        """Ask a professional question"""
-        question = random.choice(self.professional_questions)
-        
-        # Special handling for the recognize question
-        if "whom can you recognize" in question.lower():
-            return self.ask_recognize_question()
+        """Ask a question"""
+        if self.current_language == 'hi':
+            question = random.choice(self.professional_questions_hi)
+        else:
+            question = random.choice(self.professional_questions)
         
         self.speak(question)
         return question
     
     def ask_recognize_question(self):
-        """Ask about recognizable faces and list them"""
+        """Ask about recognizable faces"""
         if self.known_faces_list:
-            # Format the list of names
-            if len(self.known_faces_list) == 1:
-                names_str = self.known_faces_list[0]
-                response = f"I can recognize one person: {names_str}"
-            else:
-                # Join names with commas and 'and' for the last one
-                if len(self.known_faces_list) > 1:
-                    names_str = ", ".join(self.known_faces_list[:-1]) + " and " + self.known_faces_list[-1]
+            if self.current_language == 'hi':
+                if len(self.known_faces_list) == 1:
+                    response = f"मैं एक व्यक्ति को पहचान सकता हूँ: {self.known_faces_list[0]}"
                 else:
-                    names_str = self.known_faces_list[0]
-                
-                response = f"I can recognize {len(self.known_faces_list)} people: {names_str}"
+                    names_str = ", ".join(self.known_faces_list[:-1]) + " और " + self.known_faces_list[-1]
+                    response = f"मैं {len(self.known_faces_list)} लोगों को पहचान सकता हूँ: {names_str}"
+            else:
+                if len(self.known_faces_list) == 1:
+                    response = f"I can recognize one person: {self.known_faces_list[0]}"
+                else:
+                    names_str = ", ".join(self.known_faces_list[:-1]) + " and " + self.known_faces_list[-1]
+                    response = f"I can recognize {len(self.known_faces_list)} people: {names_str}"
         else:
-            response = "I don't know anyone yet. You can add faces by pressing 'A' and telling me your name."
+            if self.current_language == 'hi':
+                response = "मैं अभी किसी को नहीं जानता। आप 'A' दबाकर और अपना नाम बताकर चेहरे जोड़ सकते हैं।"
+            else:
+                response = "I don't know anyone yet. You can add faces by pressing 'A' and telling me your name."
         
         self.speak(response)
-        self.conversation_history.append(("robot", response, datetime.now().isoformat()))
         return response
     
     def respond_to_input(self, user_input, person_name=None):
-        """Generate intelligent response based on user input"""
+        """Generate response based on user input"""
         if not user_input:
             return None
         
         user_input_lower = user_input.lower()
         
-        # Check for keywords and generate appropriate responses
-        if any(word in user_input_lower for word in ['hello', 'hi', 'hey']):
-            response = random.choice(self.responses['greeting'])
-        
-        elif any(word in user_input_lower for word in ['how are you', 'how do you do']):
-            response = random.choice(self.responses['status'])
-        
-        elif any(word in user_input_lower for word in ['what can you do', 'capabilities', 'features', 'help']):
-            response = random.choice(self.responses['capabilities'])
-        
-        elif any(word in user_input_lower for word in ['thank', 'thanks']):
-            response = random.choice(self.responses['thanks'])
-        
-        elif any(word in user_input_lower for word in ['bye', 'goodbye', 'see you']):
-            response = random.choice(self.responses['farewell'])
-        
-        elif any(word in user_input_lower for word in ['your name', 'who are you']):
-            response = f"My name is {self.robot_name}. I am your friendly assistant robot."
-        
-        elif any(word in user_input_lower for word in ['weather']):
-            response = "I don't have access to weather information. You can check a weather app for that."
-        
-        elif any(word in user_input_lower for word in ['time']):
-            current_time = datetime.now().strftime("%I:%M %p")
-            response = f"The current time is {current_time}."
-        
-        elif any(word in user_input_lower for word in ['recognize', 'who do you know', 'whom can you recognize', 'what names']):
-            # Handle recognize question
-            if self.known_faces_list:
-                if len(self.known_faces_list) == 1:
-                    response = f"I can recognize {self.known_faces_list[0]}"
+        if self.current_language == 'hi':
+            # Hindi responses
+            if any(word in user_input_lower for word in ['नमस्ते', 'hello', 'hi']):
+                response = random.choice(self.responses_hi['greeting'])
+            elif any(word in user_input_lower for word in ['कैसे', 'how are']):
+                response = random.choice(self.responses_hi['status'])
+            elif any(word in user_input_lower for word in ['क्या कर', 'what can', 'मदद']):
+                response = random.choice(self.responses_hi['capabilities'])
+            elif any(word in user_input_lower for word in ['धन्यवाद', 'शुक्रिया', 'thank']):
+                response = random.choice(self.responses_hi['thanks'])
+            elif any(word in user_input_lower for word in ['अलविदा', 'bye', 'goodbye']):
+                response = random.choice(self.responses_hi['farewell'])
+            elif any(word in user_input_lower for word in ['नाम', 'name']):
+                if person_name:
+                    response = self.responses_hi['name_response'][0].format(name=person_name)
                 else:
-                    names_str = ", ".join(self.known_faces_list[:-1]) + " and " + self.known_faces_list[-1]
-                    response = f"I can recognize {len(self.known_faces_list)} people: {names_str}"
+                    response = "कृपया मुझे अपना नाम बताएं।"
+            elif any(word in user_input_lower for word in ['पहचान', 'recognize']):
+                return self.ask_recognize_question()
             else:
-                response = "I don't know anyone yet. You can add faces by pressing 'A' and telling me your name."
-        
-        elif any(word in user_input_lower for word in ['name', 'my name is', 'i am']):
-            # Extract name from user input
-            import re
-            name_match = re.search(r'(?:name is|i am|call me|i\'m)\s+([a-zA-Z\s]+)', user_input_lower)
-            if name_match:
-                extracted_name = name_match.group(1).strip().title()
-                response = f"Nice to meet you, Mr. {extracted_name}. How can I assist you today?"
-            elif person_name:
-                response = f"Nice to meet you, Mr. {person_name}. How can I assist you today?"
-            else:
-                response = "Please tell me your name so I can remember you."
-        
+                response = random.choice(self.responses_hi['unknown'])
         else:
-            response = random.choice(self.responses['unknown'])
+            # English responses
+            if any(word in user_input_lower for word in ['hello', 'hi', 'hey']):
+                response = random.choice(self.responses_en['greeting'])
+            elif any(word in user_input_lower for word in ['how are', 'how do']):
+                response = random.choice(self.responses_en['status'])
+            elif any(word in user_input_lower for word in ['what can', 'capabilities', 'help']):
+                response = random.choice(self.responses_en['capabilities'])
+            elif any(word in user_input_lower for word in ['thank', 'thanks']):
+                response = random.choice(self.responses_en['thanks'])
+            elif any(word in user_input_lower for word in ['bye', 'goodbye']):
+                response = random.choice(self.responses_en['farewell'])
+            elif any(word in user_input_lower for word in ['name']):
+                if person_name:
+                    response = self.responses_en['name_response'][0].format(name=person_name)
+                else:
+                    response = "Please tell me your name."
+            elif any(word in user_input_lower for word in ['recognize']):
+                return self.ask_recognize_question()
+            else:
+                response = random.choice(self.responses_en['unknown'])
         
         self.speak(response)
         return response
     
     def listen(self, timeout=5):
-        """Listen for user input with better error handling"""
+        """Listen for user input"""
         self.listening = True
         try:
             with self.microphone as source:
-                logger.info("🎤 Listening...")
-                self.recognizer.adjust_for_ambient_noise(source, duration=0.5)
+                self.safe_log("Listening...")
+                self.recognizer.adjust_for_ambient_noise(source, duration=0.3)
                 audio = self.recognizer.listen(source, timeout=timeout, phrase_time_limit=5)
             
-            # Recognize speech
-            text = self.recognizer.recognize_google(audio)
-            logger.info(f"👤 User said: {text}")
-            self.conversation_history.append(("user", text, datetime.now().isoformat()))
+            # Try Hindi first
+            text = None
+            try:
+                text = self.recognizer.recognize_google(audio, language='hi-IN')
+                self.safe_log(f"User said (Hindi): {text}")
+                self.current_language = 'hi'
+            except:
+                try:
+                    text = self.recognizer.recognize_google(audio, language='en-IN')
+                    self.safe_log(f"User said (English): {text}")
+                    self.current_language = 'en'
+                except:
+                    pass
+            
             self.listening = False
             return text
             
         except sr.WaitTimeoutError:
-            logger.debug("Listening timeout")
-            self.listening = False
-            return None
-        except sr.UnknownValueError:
-            logger.debug("Could not understand audio")
-            self.listening = False
-            return None
-        except sr.RequestError as e:
-            logger.error(f"Speech recognition service error: {e}")
             self.listening = False
             return None
         except Exception as e:
-            logger.error(f"Listening error: {e}")
+            self.safe_log(f"Listening error: {str(e)}")
             self.listening = False
             return None
     
@@ -371,40 +463,36 @@ class RobotDialog:
         """Have a natural conversation"""
         conversation = []
         
-        # Start with greeting if name provided (but check cooldown)
         if name:
             greeting = self.greet_person(name)
-            if greeting:  # Only add if greeting was actually said
+            if greeting:
                 conversation.append(("robot", greeting))
                 time.sleep(1)
         
         for i in range(turns):
-            # Ask a question
             question = self.ask_question()
             conversation.append(("robot", question))
             
-            # Wait for response
-            time.sleep(1.5)
+            time.sleep(1)
             response = self.listen(timeout=4)
             
             if response:
                 conversation.append(("user", response))
-                # Generate response
+                
+                # Check for Hindi and switch if needed
+                detected_lang = self.detect_language(response)
+                if detected_lang == 'hi' and self.current_language == 'en' and not self.hindi_intro_given:
+                    self.current_language = 'hi'
+                    self.hindi_intro_given = True
+                    intro = random.choice(self.responses_hi['hindi_intro'])
+                    self.speak(intro)
+                    conversation.append(("robot", intro))
+                    time.sleep(1)
+                
                 robot_response = self.respond_to_input(response, name)
                 conversation.append(("robot", robot_response))
                 time.sleep(1)
             else:
-                self.speak("I didn't catch that. Shall we continue?")
                 break
         
         return conversation
-    
-    def get_conversation_summary(self):
-        """Get summary of conversation history"""
-        summary = {
-            'total_exchanges': len(self.conversation_history),
-            'robot_messages': sum(1 for msg in self.conversation_history if msg[0] == 'robot'),
-            'user_messages': sum(1 for msg in self.conversation_history if msg[0] == 'user'),
-            'recent': self.conversation_history[-5:] if self.conversation_history else []
-        }
-        return summary

@@ -720,3 +720,1140 @@ Current Face Database:
 ==================================================
 2026-03-10 16:04:43,529 - __main__ - INFO - Robot shutdown complete
 2026-03-10 16:04:43,530 - __main__ - INFO - ==================================================
+2026-03-13 10:27:29,713 - __main__ - INFO - ==================================================
+2026-03-13 10:27:29,713 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-13 10:27:29,713 - __main__ - INFO - ==================================================
+2026-03-13 10:27:29,713 - src.face_recognizer - ERROR - Error loading encodings: Ran out of input
+2026-03-13 10:27:29,793 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-13 10:27:29,793 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-13 10:27:30,092 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:27:30,092 - src.robot_dialog - INFO - SELECTING FEMALE VOICE
+2026-03-13 10:27:30,092 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:27:30,093 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-13 10:27:30,093 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-13 10:27:30,122 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:27:30,745 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-13 10:27:32,775 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-13 10:27:32,775 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-13 10:27:32,776 - __main__ - INFO - 
+Loading known faces...
+2026-03-13 10:27:32,777 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-13 10:27:43,728 - __main__ - INFO - Successfully loaded 4 new faces
+2026-03-13 10:27:43,728 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal']
+2026-03-13 10:27:43,728 - __main__ - INFO - 
+Current Face Database:
+2026-03-13 10:27:43,728 - __main__ - INFO -   Total known faces: 4
+2026-03-13 10:27:43,728 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-13 10:27:43,736 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-13 10:27:43,736 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-13 10:27:43,736 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-13 10:27:43,736 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal']
+2026-03-13 10:27:44,072 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-13 10:27:44,072 - __main__ - INFO - 
+==================================================
+2026-03-13 10:27:44,072 - __main__ - INFO - Robot is now running
+2026-03-13 10:27:44,072 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-13 10:27:44,072 - __main__ - INFO - ==================================================
+
+2026-03-13 10:27:46,199 - __main__ - INFO - Recognized: Gopal (confidence: 69.33%)
+2026-03-13 10:27:46,200 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:27:57,700 - __main__ - INFO - Recognized: Gopal (confidence: 58.33%)
+2026-03-13 10:28:07,910 - __main__ - INFO - Recognized: Gopal (confidence: 71.15%)
+2026-03-13 10:28:18,299 - __main__ - INFO - Recognized: Gopal (confidence: 73.07%)
+2026-03-13 10:28:18,300 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:28:28,887 - __main__ - INFO - Recognized: Gopal (confidence: 73.44%)
+2026-03-13 10:28:39,400 - __main__ - INFO - Recognized: Gopal (confidence: 73.73%)
+2026-03-13 10:28:49,511 - __main__ - INFO - Recognized: Gopal (confidence: 69.52%)
+2026-03-13 10:28:49,511 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:28:59,879 - __main__ - INFO - Recognized: Gopal (confidence: 69.95%)
+2026-03-13 10:29:10,194 - __main__ - INFO - Recognized: Gopal (confidence: 72.81%)
+2026-03-13 10:29:20,199 - __main__ - INFO - Recognized: Gopal (confidence: 74.01%)
+2026-03-13 10:29:20,199 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:29:30,682 - __main__ - INFO - Recognized: Gopal (confidence: 73.83%)
+2026-03-13 10:29:41,099 - __main__ - INFO - Recognized: Gopal (confidence: 69.50%)
+2026-03-13 10:29:51,304 - __main__ - INFO - Recognized: Gopal (confidence: 67.54%)
+2026-03-13 10:29:51,305 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:30:01,630 - __main__ - INFO - Recognized: Gopal (confidence: 73.02%)
+2026-03-13 10:30:12,297 - __main__ - INFO - Recognized: Gopal (confidence: 69.74%)
+2026-03-13 10:30:23,022 - __main__ - INFO - Recognized: Gopal (confidence: 70.75%)
+2026-03-13 10:30:23,022 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:30:33,309 - __main__ - INFO - Recognized: Gopal (confidence: 69.64%)
+2026-03-13 10:30:43,606 - __main__ - INFO - Recognized: Gopal (confidence: 68.07%)
+2026-03-13 10:30:54,088 - __main__ - INFO - Recognized: Gopal (confidence: 63.26%)
+2026-03-13 10:30:54,088 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:31:04,214 - __main__ - INFO - Recognized: Gopal (confidence: 62.92%)
+2026-03-13 10:31:14,449 - __main__ - INFO - Recognized: Gopal (confidence: 62.64%)
+2026-03-13 10:31:24,518 - __main__ - INFO - Recognized: Gopal (confidence: 63.49%)
+2026-03-13 10:31:24,518 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:31:34,983 - __main__ - INFO - Recognized: Gopal (confidence: 64.74%)
+2026-03-13 10:31:45,597 - __main__ - INFO - Recognized: Gopal (confidence: 63.43%)
+2026-03-13 10:31:56,076 - __main__ - INFO - Recognized: Gopal (confidence: 67.92%)
+2026-03-13 10:31:56,076 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:32:06,705 - __main__ - INFO - Recognized: Gopal (confidence: 68.94%)
+2026-03-13 10:32:17,182 - __main__ - INFO - Recognized: Gopal (confidence: 72.09%)
+2026-03-13 10:32:27,221 - __main__ - INFO - Recognized: Gopal (confidence: 70.38%)
+2026-03-13 10:32:27,221 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:32:37,905 - __main__ - INFO - Quit command received
+2026-03-13 10:32:40,214 - __main__ - INFO - Camera stopped
+2026-03-13 10:32:42,224 - __main__ - INFO - 
+==================================================
+2026-03-13 10:32:42,224 - __main__ - INFO - Robot shutdown complete
+2026-03-13 10:32:42,224 - __main__ - INFO - ==================================================
+2026-03-13 10:39:52,134 - __main__ - INFO - ==================================================
+2026-03-13 10:39:52,134 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-13 10:39:52,134 - __main__ - INFO - ==================================================
+2026-03-13 10:39:52,247 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-13 10:39:52,247 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-13 10:39:52,506 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:39:52,507 - src.robot_dialog - INFO - SELECTING FEMALE VOICE
+2026-03-13 10:39:52,507 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:39:52,507 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-13 10:39:52,507 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-13 10:39:52,519 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:39:53,030 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-13 10:39:55,058 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-13 10:39:55,058 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-13 10:39:55,059 - __main__ - INFO - 
+Loading known faces...
+2026-03-13 10:39:55,059 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-13 10:39:55,061 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-13 10:39:55,061 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-13 10:39:55,061 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-13 10:39:55,061 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-13 10:39:55,062 - __main__ - INFO - No new faces to load
+2026-03-13 10:39:55,062 - __main__ - INFO - 
+Current Face Database:
+2026-03-13 10:39:55,062 - __main__ - INFO -   Total known faces: 4
+2026-03-13 10:39:55,062 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-13 10:39:55,062 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-13 10:39:55,062 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-13 10:39:55,063 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-13 10:39:55,063 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal']
+2026-03-13 10:39:55,435 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-13 10:39:55,435 - __main__ - INFO - 
+==================================================
+2026-03-13 10:39:55,435 - __main__ - INFO - Robot is now running
+2026-03-13 10:39:55,435 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-13 10:39:55,435 - __main__ - INFO - ==================================================
+
+2026-03-13 10:39:56,872 - __main__ - INFO - Recognized: Gopal (confidence: 71.50%)
+2026-03-13 10:39:56,872 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:40:36,974 - __main__ - INFO - Recognized: Abhay (confidence: 72.20%)
+2026-03-13 10:40:36,975 - src.robot_dialog - INFO - Greeted Abhay with: Good morning Abhay, Nice to meet you Mr. Abhay, How can I assist you today?
+2026-03-13 10:40:42,255 - __main__ - INFO - Recognized: Gopal (confidence: 71.52%)
+2026-03-13 10:40:42,255 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:40:48,142 - __main__ - INFO - Quit command received
+2026-03-13 10:40:50,470 - __main__ - INFO - Camera stopped
+2026-03-13 10:40:52,483 - __main__ - INFO - 
+==================================================
+2026-03-13 10:40:52,483 - __main__ - INFO - Robot shutdown complete
+2026-03-13 10:40:52,484 - __main__ - INFO - ==================================================
+2026-03-13 10:44:33,809 - __main__ - INFO - ==================================================
+2026-03-13 10:44:33,809 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-13 10:44:33,809 - __main__ - INFO - ==================================================
+2026-03-13 10:44:33,862 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-13 10:44:33,862 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-13 10:44:34,013 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:44:34,014 - src.robot_dialog - INFO - SELECTING FEMALE VOICE
+2026-03-13 10:44:34,014 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:44:34,014 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-13 10:44:34,014 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-13 10:44:34,016 - src.robot_dialog - INFO - ==================================================
+2026-03-13 10:44:34,486 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-13 10:44:36,511 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-13 10:44:36,511 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-13 10:44:36,511 - __main__ - INFO - 
+Loading known faces...
+2026-03-13 10:44:36,511 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-13 10:44:36,511 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-13 10:44:36,511 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-13 10:44:36,511 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-13 10:44:36,511 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-13 10:44:36,518 - __main__ - INFO - No new faces to load
+2026-03-13 10:44:36,518 - __main__ - INFO - 
+Current Face Database:
+2026-03-13 10:44:36,518 - __main__ - INFO -   Total known faces: 4
+2026-03-13 10:44:36,518 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-13 10:44:36,518 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-13 10:44:36,518 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-13 10:44:36,519 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-13 10:44:36,519 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal']
+2026-03-13 10:44:36,789 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-13 10:44:36,789 - __main__ - INFO - 
+==================================================
+2026-03-13 10:44:36,789 - __main__ - INFO - Robot is now running
+2026-03-13 10:44:36,790 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-13 10:44:36,790 - __main__ - INFO - ==================================================
+
+2026-03-13 10:44:37,893 - __main__ - INFO - Recognized: Gopal (confidence: 70.40%)
+2026-03-13 10:44:37,893 - src.robot_dialog - INFO - Greeted Gopal with: Good morning Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-13 10:44:43,699 - __main__ - INFO - Quit command received
+2026-03-13 10:44:46,022 - __main__ - INFO - Camera stopped
+2026-03-13 10:44:48,040 - __main__ - INFO - 
+==================================================
+2026-03-13 10:44:48,040 - __main__ - INFO - Robot shutdown complete
+2026-03-13 10:44:48,040 - __main__ - INFO - ==================================================
+2026-03-17 16:36:14,047 - __main__ - INFO - ==================================================
+2026-03-17 16:36:14,047 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 16:36:14,047 - __main__ - INFO - ==================================================
+2026-03-17 16:36:14,155 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 16:36:14,156 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 16:36:14,354 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:36:14,354 - src.robot_dialog - INFO - SELECTING FEMALE VOICE
+2026-03-17 16:36:14,354 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:36:14,354 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 16:36:14,354 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 16:36:14,356 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:36:14,890 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 16:36:16,924 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 16:36:16,924 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 16:36:16,925 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 16:36:16,925 - src.face_recognizer - INFO - Found 5 image files in C:\face_recognition_robot\known_faces
+2026-03-17 16:36:16,925 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 16:36:20,564 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 16:36:20,565 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 16:36:20,565 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 16:36:20,566 - __main__ - INFO - Successfully loaded 1 new faces
+2026-03-17 16:36:20,566 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 16:36:20,566 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 16:36:20,566 - __main__ - INFO -   Total known faces: 5
+2026-03-17 16:36:20,566 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 16:36:20,567 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 16:36:20,567 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 16:36:20,567 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 16:36:20,567 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 16:36:20,567 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 16:36:20,913 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 16:36:20,913 - __main__ - INFO - 
+==================================================
+2026-03-17 16:36:20,913 - __main__ - INFO - Robot is now running
+2026-03-17 16:36:20,913 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 16:36:20,913 - __main__ - INFO - ==================================================
+
+2026-03-17 16:36:21,962 - __main__ - INFO - Recognized: Gopal (confidence: 60.76%)
+2026-03-17 16:36:21,963 - src.robot_dialog - INFO - Greeted Gopal with: Good afternoon Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 16:36:32,638 - __main__ - INFO - Recognized: Gopal (confidence: 64.79%)
+2026-03-17 16:36:39,405 - __main__ - INFO - Recognized: Chairman Mister K Vasal (confidence: 70.91%)
+2026-03-17 16:36:39,406 - src.robot_dialog - INFO - Greeted Chairman Mister K Vasal with: Good afternoon Chairman Mister K Vasal, Nice to meet you Mr. Chairman Mister K Vasal, How can I assist you today?
+2026-03-17 16:36:47,422 - __main__ - INFO - Recognized: Gopal (confidence: 68.57%)
+2026-03-17 16:36:51,941 - __main__ - INFO - Quit command received
+2026-03-17 16:36:54,349 - __main__ - INFO - Camera stopped
+2026-03-17 16:36:56,361 - __main__ - INFO - 
+==================================================
+2026-03-17 16:36:56,362 - __main__ - INFO - Robot shutdown complete
+2026-03-17 16:36:56,362 - __main__ - INFO - ==================================================
+2026-03-17 16:40:25,132 - __main__ - INFO - ==================================================
+2026-03-17 16:40:25,132 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 16:40:25,132 - __main__ - INFO - ==================================================
+2026-03-17 16:40:25,179 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 16:40:25,179 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 16:40:25,289 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:40:25,290 - src.robot_dialog - INFO - SELECTING FEMALE VOICE
+2026-03-17 16:40:25,290 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:40:25,290 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 16:40:25,290 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 16:40:25,291 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:40:25,539 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 16:40:27,573 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 16:40:27,573 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 16:40:27,573 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 16:40:27,573 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 16:40:27,573 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 16:40:27,577 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 16:40:27,577 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 16:40:27,577 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 16:40:27,578 - __main__ - INFO - No new faces to load
+2026-03-17 16:40:27,578 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 16:40:27,578 - __main__ - INFO -   Total known faces: 5
+2026-03-17 16:40:27,578 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 16:40:27,578 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 16:40:27,578 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 16:40:27,578 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 16:40:27,578 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 16:40:27,578 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 16:40:27,847 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 16:40:27,847 - __main__ - INFO - 
+==================================================
+2026-03-17 16:40:27,847 - __main__ - INFO - Robot is now running
+2026-03-17 16:40:27,847 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 16:40:27,847 - __main__ - INFO - ==================================================
+
+2026-03-17 16:40:28,861 - __main__ - INFO - Recognized: Gopal (confidence: 52.32%)
+2026-03-17 16:40:28,861 - src.robot_dialog - INFO - Greeted Gopal with: Good afternoon Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 16:40:37,321 - __main__ - INFO - Recognized: Chairman Mister K Vasal (confidence: 62.72%)
+2026-03-17 16:40:37,322 - src.robot_dialog - INFO - Greeted Chairman Mister K Vasal with: Good afternoon Chairman Mister K Vasal, Nice to meet you Mr. Chairman Mister K Vasal, How can I assist you today?
+2026-03-17 16:40:39,337 - __main__ - INFO - Recognized: Gopal (confidence: 55.50%)
+2026-03-17 16:40:49,756 - __main__ - INFO - Recognized: Gopal (confidence: 55.53%)
+2026-03-17 16:40:52,075 - __main__ - INFO - Quit command received
+2026-03-17 16:40:54,395 - __main__ - INFO - Camera stopped
+2026-03-17 16:40:56,408 - __main__ - INFO - 
+==================================================
+2026-03-17 16:40:56,408 - __main__ - INFO - Robot shutdown complete
+2026-03-17 16:40:56,408 - __main__ - INFO - ==================================================
+2026-03-17 16:42:20,590 - __main__ - INFO - ==================================================
+2026-03-17 16:42:20,591 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 16:42:20,591 - __main__ - INFO - ==================================================
+2026-03-17 16:42:20,638 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 16:42:20,638 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 16:42:20,750 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:42:20,750 - src.robot_dialog - INFO - SELECTING FEMALE VOICE
+2026-03-17 16:42:20,750 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:42:20,750 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 16:42:20,750 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 16:42:20,752 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:42:21,399 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 16:42:23,424 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 16:42:23,424 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 16:42:23,424 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 16:42:23,424 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 16:42:23,424 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 16:42:23,424 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 16:42:23,424 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 16:42:23,424 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 16:42:23,430 - __main__ - INFO - No new faces to load
+2026-03-17 16:42:23,430 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 16:42:23,430 - __main__ - INFO -   Total known faces: 5
+2026-03-17 16:42:23,430 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 16:42:23,430 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 16:42:23,430 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 16:42:23,430 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 16:42:23,430 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 16:42:23,430 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 16:42:23,706 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 16:42:23,706 - __main__ - INFO - 
+==================================================
+2026-03-17 16:42:23,706 - __main__ - INFO - Robot is now running
+2026-03-17 16:42:23,706 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 16:42:23,706 - __main__ - INFO - ==================================================
+
+2026-03-17 16:42:24,727 - __main__ - INFO - Recognized: Gopal (confidence: 59.61%)
+2026-03-17 16:42:24,727 - src.robot_dialog - INFO - Greeted Gopal with: Good afternoon Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 16:42:37,616 - __main__ - INFO - Recognized: Gopal (confidence: 58.01%)
+2026-03-17 16:42:48,016 - __main__ - INFO - Recognized: Gopal (confidence: 55.36%)
+2026-03-17 16:42:58,032 - __main__ - INFO - Recognized: Gopal (confidence: 56.32%)
+2026-03-17 16:42:58,032 - src.robot_dialog - INFO - Greeted Gopal with: Good afternoon Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 16:43:08,128 - __main__ - INFO - Recognized: Gopal (confidence: 53.34%)
+2026-03-17 16:43:15,122 - __main__ - INFO - Quit command received
+2026-03-17 16:43:17,479 - __main__ - INFO - Camera stopped
+2026-03-17 16:43:19,491 - __main__ - INFO - 
+==================================================
+2026-03-17 16:43:19,491 - __main__ - INFO - Robot shutdown complete
+2026-03-17 16:43:19,493 - __main__ - INFO - ==================================================
+2026-03-17 16:54:49,350 - __main__ - INFO - ==================================================
+2026-03-17 16:54:49,350 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 16:54:49,350 - __main__ - INFO - ==================================================
+2026-03-17 16:54:49,398 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 16:54:49,399 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 16:54:49,513 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:54:49,514 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 16:54:49,514 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:54:49,514 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 16:54:49,514 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 16:54:49,516 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:54:49,787 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 16:54:51,816 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 16:54:51,816 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 16:54:51,817 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 16:54:51,817 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 16:54:51,817 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 16:54:51,818 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 16:54:51,818 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 16:54:51,818 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 16:54:51,819 - __main__ - INFO - No new faces to load
+2026-03-17 16:54:51,819 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 16:54:51,819 - __main__ - INFO -   Total known faces: 5
+2026-03-17 16:54:51,819 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 16:54:51,821 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 16:54:51,821 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 16:54:51,821 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 16:54:51,821 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 16:54:51,821 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 16:54:52,101 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 16:54:52,102 - __main__ - INFO - 
+==================================================
+2026-03-17 16:54:52,102 - __main__ - INFO - Robot is now running
+2026-03-17 16:54:52,102 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 16:54:52,102 - __main__ - INFO - ==================================================
+
+2026-03-17 16:54:53,120 - __main__ - INFO - Recognized: Gopal (confidence: 64.39%)
+2026-03-17 16:54:53,122 - src.robot_dialog - INFO - Greeted Gopal with: Good afternoon Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 16:55:03,529 - __main__ - INFO - Recognized: Gopal (confidence: 63.82%)
+2026-03-17 16:55:16,419 - __main__ - INFO - Recognized: Gopal (confidence: 68.57%)
+2026-03-17 16:55:27,105 - __main__ - INFO - Recognized: Gopal (confidence: 60.51%)
+2026-03-17 16:55:27,105 - src.robot_dialog - INFO - Greeted Gopal with: Good afternoon Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 16:55:38,312 - __main__ - INFO - Recognized: Gopal (confidence: 66.37%)
+2026-03-17 16:55:53,909 - __main__ - INFO - Camera stopped
+2026-03-17 16:55:55,922 - __main__ - INFO - 
+==================================================
+2026-03-17 16:55:55,922 - __main__ - INFO - Robot shutdown complete
+2026-03-17 16:55:55,922 - __main__ - INFO - ==================================================
+2026-03-17 16:55:55,922 - __main__ - ERROR - Fatal error: too many values to unpack (expected 2)
+2026-03-17 16:56:02,942 - __main__ - INFO - ==================================================
+2026-03-17 16:56:02,942 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 16:56:02,942 - __main__ - INFO - ==================================================
+2026-03-17 16:56:02,988 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 16:56:02,989 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 16:56:03,096 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:56:03,096 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 16:56:03,096 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:56:03,096 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 16:56:03,097 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 16:56:03,098 - src.robot_dialog - INFO - ==================================================
+2026-03-17 16:56:03,494 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 16:56:05,522 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 16:56:05,522 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 16:56:05,523 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 16:56:05,524 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 16:56:05,524 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 16:56:05,524 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 16:56:05,524 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 16:56:05,524 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 16:56:05,525 - __main__ - INFO - No new faces to load
+2026-03-17 16:56:05,526 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 16:56:05,526 - __main__ - INFO -   Total known faces: 5
+2026-03-17 16:56:05,526 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 16:56:05,526 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 16:56:05,526 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 16:56:05,526 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 16:56:05,526 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 16:56:05,526 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 16:56:05,794 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 16:56:05,795 - __main__ - INFO - 
+==================================================
+2026-03-17 16:56:05,795 - __main__ - INFO - Robot is now running
+2026-03-17 16:56:05,795 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 16:56:05,795 - __main__ - INFO - ==================================================
+
+2026-03-17 16:56:09,841 - __main__ - INFO - Recognized: Gopal (confidence: 66.49%)
+2026-03-17 16:56:09,841 - src.robot_dialog - INFO - Greeted Gopal with: Good afternoon Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 16:56:29,951 - __main__ - INFO - Camera stopped
+2026-03-17 16:56:31,963 - __main__ - INFO - 
+==================================================
+2026-03-17 16:56:31,963 - __main__ - INFO - Robot shutdown complete
+2026-03-17 16:56:31,963 - __main__ - INFO - ==================================================
+2026-03-17 16:56:31,964 - __main__ - ERROR - Fatal error: too many values to unpack (expected 2)
+2026-03-17 17:02:52,760 - __main__ - INFO - ==================================================
+2026-03-17 17:02:52,760 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 17:02:52,760 - __main__ - INFO - ==================================================
+2026-03-17 17:02:52,807 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 17:02:52,807 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 17:02:52,918 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:02:52,918 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 17:02:52,918 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:02:52,918 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 17:02:52,918 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 17:02:52,920 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:02:53,163 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 17:02:55,197 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 17:02:55,197 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 17:02:55,198 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 17:02:55,198 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 17:02:55,199 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 17:02:55,199 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 17:02:55,199 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 17:02:55,199 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 17:02:55,200 - __main__ - INFO - No new faces to load
+2026-03-17 17:02:55,200 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 17:02:55,200 - __main__ - INFO -   Total known faces: 5
+2026-03-17 17:02:55,200 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 17:02:55,200 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 17:02:55,200 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 17:02:55,201 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 17:02:55,201 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 17:02:55,201 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 17:02:55,487 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 17:02:55,487 - __main__ - INFO - 
+==================================================
+2026-03-17 17:02:55,487 - __main__ - INFO - Robot is now running
+2026-03-17 17:02:55,487 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 17:02:55,487 - __main__ - INFO - ==================================================
+
+2026-03-17 17:02:55,487 - src.robot_dialog - INFO - Robot says (en): Robot is now online and ready to assist.
+2026-03-17 17:02:56,513 - __main__ - INFO - Recognized: Gopal (confidence: 71.22%)
+2026-03-17 17:02:56,514 - src.robot_dialog - INFO - Greeted Gopal with: Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:02:59,151 - src.robot_dialog - INFO - Robot says (en): Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:03:05,411 - src.robot_dialog - INFO - Robot says (en): Is there anything I can help you with?
+2026-03-17 17:03:07,005 - __main__ - INFO - Recognized: Gopal (confidence: 60.14%)
+2026-03-17 17:03:16,917 - src.robot_dialog - INFO - Robot says (en): I can recognize 5 people: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal and Chairman Mister K Vasal
+2026-03-17 17:03:18,518 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:03:23,397 - __main__ - INFO - Camera stopped
+2026-03-17 17:03:25,407 - __main__ - INFO - 
+==================================================
+2026-03-17 17:03:25,407 - __main__ - INFO - Robot shutdown complete
+2026-03-17 17:03:25,407 - __main__ - INFO - ==================================================
+2026-03-17 17:03:25,407 - __main__ - ERROR - Fatal error: too many values to unpack (expected 2)
+2026-03-17 17:03:33,697 - __main__ - INFO - ==================================================
+2026-03-17 17:03:33,697 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 17:03:33,697 - __main__ - INFO - ==================================================
+2026-03-17 17:03:33,743 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 17:03:33,743 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 17:03:33,858 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:03:33,858 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 17:03:33,858 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:03:33,858 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 17:03:33,859 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 17:03:33,860 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:03:34,117 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 17:03:36,144 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 17:03:36,144 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 17:03:36,145 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 17:03:36,146 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 17:03:36,146 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 17:03:36,146 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 17:03:36,146 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 17:03:36,146 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 17:03:36,147 - __main__ - INFO - No new faces to load
+2026-03-17 17:03:36,147 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 17:03:36,147 - __main__ - INFO -   Total known faces: 5
+2026-03-17 17:03:36,147 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 17:03:36,147 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 17:03:36,147 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 17:03:36,148 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 17:03:36,148 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 17:03:36,148 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 17:03:36,418 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 17:03:36,419 - __main__ - INFO - 
+==================================================
+2026-03-17 17:03:36,419 - __main__ - INFO - Robot is now running
+2026-03-17 17:03:36,419 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 17:03:36,419 - __main__ - INFO - ==================================================
+
+2026-03-17 17:03:36,419 - src.robot_dialog - INFO - Robot says (en): Robot is now online and ready to assist.
+2026-03-17 17:03:43,439 - __main__ - INFO - Recognized: Gopal (confidence: 67.85%)
+2026-03-17 17:03:43,439 - src.robot_dialog - INFO - Greeted Gopal with: Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:03:43,439 - src.robot_dialog - INFO - Robot says (en): Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:03:49,900 - src.robot_dialog - INFO - Robot says (en): I am listening. What would you like to say?
+2026-03-17 17:03:49,953 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:03:58,025 - __main__ - INFO - Recognized: Gopal (confidence: 66.46%)
+2026-03-17 17:04:09,223 - __main__ - INFO - Recognized: Gopal (confidence: 67.75%)
+2026-03-17 17:04:17,046 - src.robot_dialog - INFO - Greeted Gopal with: Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:04:17,046 - src.robot_dialog - INFO - Robot says (en): Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:04:19,643 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:04:27,170 - src.robot_dialog - INFO - Detected language: hi
+2026-03-17 17:04:30,726 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:04:37,126 - src.robot_dialog - INFO - Detected language: hi
+2026-03-17 17:04:38,524 - __main__ - INFO - Camera stopped
+2026-03-17 17:04:40,534 - __main__ - INFO - 
+==================================================
+2026-03-17 17:04:40,534 - __main__ - INFO - Robot shutdown complete
+2026-03-17 17:04:40,535 - __main__ - INFO - ==================================================
+2026-03-17 17:04:40,535 - __main__ - ERROR - Fatal error: too many values to unpack (expected 2)
+2026-03-17 17:06:10,145 - __main__ - INFO - ==================================================
+2026-03-17 17:06:10,146 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 17:06:10,146 - __main__ - INFO - ==================================================
+2026-03-17 17:06:10,192 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 17:06:10,192 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 17:06:10,301 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:06:10,301 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 17:06:10,301 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:06:10,302 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0
+2026-03-17 17:06:10,302 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States) - ID: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0
+2026-03-17 17:06:10,303 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:06:10,684 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 17:06:12,711 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 17:06:12,711 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 17:06:12,711 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 17:06:12,711 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 17:06:12,711 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 17:06:12,711 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 17:06:12,711 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 17:06:12,711 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 17:06:12,714 - __main__ - INFO - No new faces to load
+2026-03-17 17:06:12,714 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 17:06:12,714 - __main__ - INFO -   Total known faces: 5
+2026-03-17 17:06:12,714 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 17:06:12,714 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 17:06:12,714 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 17:06:12,714 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 17:06:12,714 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 17:06:12,714 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 17:06:12,979 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 17:06:12,979 - __main__ - INFO - 
+==================================================
+2026-03-17 17:06:12,979 - __main__ - INFO - Robot is now running
+2026-03-17 17:06:12,979 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 17:06:12,979 - __main__ - INFO - ==================================================
+
+2026-03-17 17:06:12,979 - src.robot_dialog - INFO - Robot says (en): Robot is now online and ready to assist.
+2026-03-17 17:06:16,488 - __main__ - INFO - Recognized: Gopal (confidence: 66.08%)
+2026-03-17 17:06:16,488 - src.robot_dialog - INFO - Greeted Gopal with: Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:06:16,551 - src.robot_dialog - INFO - Robot says (en): Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:06:26,606 - __main__ - INFO - Recognized: Gopal (confidence: 64.70%)
+2026-03-17 17:06:32,764 - __main__ - INFO - Recognized: Chairman Mister K Vasal (confidence: 72.03%)
+2026-03-17 17:06:32,764 - src.robot_dialog - INFO - Greeted Chairman Mister K Vasal with: Good evening Chairman Mister K Vasal, Nice to meet you Mr. Chairman Mister K Vasal, How can I assist you today?
+2026-03-17 17:06:32,765 - src.robot_dialog - INFO - Robot says (en): Good evening Chairman Mister K Vasal, Nice to meet you Mr. Chairman Mister K Vasal, How can I assist you today?
+2026-03-17 17:06:39,689 - __main__ - INFO - Recognized: Gopal (confidence: 67.56%)
+2026-03-17 17:06:41,381 - src.robot_dialog - INFO - Robot says (en): What tasks are you focusing on today?
+2026-03-17 17:07:45,503 - __main__ - INFO - Recognized: Gopal (confidence: 67.54%)
+2026-03-17 17:07:45,503 - src.robot_dialog - INFO - Greeted Gopal with: Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:07:45,503 - src.robot_dialog - INFO - Robot says (en): Good evening Gopal, Nice to meet you Mr. Gopal, How can I assist you today?
+2026-03-17 17:07:55,610 - __main__ - INFO - Recognized: Gopal (confidence: 68.92%)
+2026-03-17 17:08:05,995 - __main__ - INFO - Recognized: Gopal (confidence: 69.66%)
+2026-03-17 17:08:05,995 - src.robot_dialog - INFO - Robot says (en): Would you like me to show you any features?
+2026-03-17 17:08:07,610 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:08:12,050 - src.robot_dialog - INFO - Detected language: hi
+2026-03-17 17:08:15,617 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:08:26,116 - src.robot_dialog - INFO - Detected language: hi
+2026-03-17 17:08:27,458 - __main__ - INFO - Camera stopped
+2026-03-17 17:08:29,470 - __main__ - INFO - 
+==================================================
+2026-03-17 17:08:29,470 - __main__ - INFO - Robot shutdown complete
+2026-03-17 17:08:29,471 - __main__ - INFO - ==================================================
+2026-03-17 17:08:29,471 - __main__ - ERROR - Fatal error: too many values to unpack (expected 2)
+2026-03-17 17:13:54,463 - __main__ - INFO - ==================================================
+2026-03-17 17:13:54,463 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 17:13:54,463 - __main__ - INFO - ==================================================
+2026-03-17 17:13:54,510 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 17:13:54,510 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 17:13:54,618 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:13:54,619 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 17:13:54,619 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:13:54,619 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States)
+2026-03-17 17:13:54,619 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States)
+2026-03-17 17:13:54,620 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:13:55,279 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 17:13:56,308 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 17:13:56,308 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 17:13:56,309 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 17:13:56,309 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 17:13:56,309 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 17:13:56,310 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 17:13:56,310 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 17:13:56,310 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 17:13:56,310 - __main__ - INFO - No new faces to load
+2026-03-17 17:13:56,311 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 17:13:56,311 - __main__ - INFO -   Total known faces: 5
+2026-03-17 17:13:56,311 - __main__ - INFO -   • Abhay: recognized 0 times
+2026-03-17 17:13:56,311 - __main__ - INFO -   • Gopal: recognized 0 times
+2026-03-17 17:13:56,311 - __main__ - INFO -   • Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 17:13:56,311 - __main__ - INFO -   • Mister Raghav Vasal: recognized 0 times
+2026-03-17 17:13:56,311 - __main__ - INFO -   • Chairman Mister K Vasal: recognized 0 times
+2026-03-17 17:13:56,311 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 17:13:56,601 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 17:13:56,601 - __main__ - INFO - 
+==================================================
+2026-03-17 17:13:56,601 - __main__ - INFO - Robot is now running
+2026-03-17 17:13:56,601 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 17:13:56,601 - __main__ - INFO - ==================================================
+
+2026-03-17 17:13:56,601 - src.robot_dialog - INFO - Robot says: Robot is now online and ready to assist.
+2026-03-17 17:13:59,614 - __main__ - INFO - Recognized: Gopal (confidence: 69.69%)
+2026-03-17 17:14:00,369 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 17:14:03,622 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:14:07,253 - src.robot_dialog - INFO - User said (Hindi): 
+2026-03-17 17:14:10,314 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:14:15,049 - src.robot_dialog - INFO - User said (Hindi):      
+2026-03-17 17:14:16,080 - src.robot_dialog - INFO - Robot says: Whom can you recognize?
+2026-03-17 17:14:18,487 - src.robot_dialog - INFO - Robot says:  ,          
+2026-03-17 17:14:18,591 - src.robot_dialog - INFO - Robot says:        ?
+2026-03-17 17:14:18,685 - src.robot_dialog - INFO - Robot says:       ?
+2026-03-17 17:14:18,784 - src.robot_dialog - INFO - Robot says:        ?
+2026-03-17 17:14:21,488 - __main__ - INFO - Recognized: Gopal (confidence: 69.94%)
+2026-03-17 17:14:32,598 - __main__ - INFO - Recognized: Gopal (confidence: 68.38%)
+2026-03-17 17:14:32,598 - src.robot_dialog - INFO - Robot says:   Gopal,    ,       ?
+2026-03-17 17:14:46,104 - __main__ - INFO - Recognized: Gopal (confidence: 62.44%)
+2026-03-17 17:14:56,106 - __main__ - INFO - Recognized: Gopal (confidence: 65.34%)
+2026-03-17 17:15:03,273 - __main__ - INFO - Recognized: Chairman Mister K Vasal (confidence: 70.44%)
+2026-03-17 17:15:03,273 - src.robot_dialog - INFO - Robot says:   Chairman Mister K Vasal,    ,       ?
+2026-03-17 17:15:06,363 - src.robot_dialog - INFO - Robot says:        ?
+2026-03-17 17:15:13,002 - __main__ - INFO - Recognized: Gopal (confidence: 67.26%)
+2026-03-17 17:15:13,002 - src.robot_dialog - INFO - Robot says:   Gopal,    ,       ?
+2026-03-17 17:15:27,803 - __main__ - INFO - Recognized: Gopal (confidence: 65.12%)
+2026-03-17 17:15:33,595 - __main__ - INFO - Quit command received
+2026-03-17 17:15:33,595 - src.robot_dialog - INFO - Robot says: Goodbye. It was nice chatting with you.
+2026-03-17 17:15:35,955 - __main__ - INFO - Camera stopped
+2026-03-17 17:15:37,966 - __main__ - INFO - 
+==================================================
+2026-03-17 17:15:37,966 - __main__ - INFO - Robot shutdown complete
+2026-03-17 17:15:37,966 - __main__ - INFO - ==================================================
+2026-03-17 17:24:55,337 - __main__ - INFO - ==================================================
+2026-03-17 17:24:55,337 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 17:24:55,337 - __main__ - INFO - ==================================================
+2026-03-17 17:24:55,337 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 17:24:55,396 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 17:24:55,396 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 17:24:55,552 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:24:55,552 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 17:24:55,552 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:24:55,552 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States)
+2026-03-17 17:24:55,552 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States)
+2026-03-17 17:24:55,554 - src.robot_dialog - INFO - âœ… SELECTED VOICE (adjustable): Microsoft Zira Desktop - English (United States)
+2026-03-17 17:24:55,554 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:24:56,288 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 17:24:57,312 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 17:24:57,312 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 17:24:57,312 - __main__ - INFO - âœ… Selected Indian voice: Microsoft David Desktop - English (United States)
+2026-03-17 17:24:57,312 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 17:24:57,314 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 17:24:57,314 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 17:24:57,314 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 17:24:57,314 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 17:24:57,314 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 17:24:57,314 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 17:24:57,315 - __main__ - INFO - No new faces to load
+2026-03-17 17:24:57,315 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 17:24:57,315 - __main__ - INFO -   Total known faces: 5
+2026-03-17 17:24:57,315 - __main__ - INFO -   â€¢ Abhay: recognized 0 times
+2026-03-17 17:24:57,315 - __main__ - INFO -   â€¢ Gopal: recognized 0 times
+2026-03-17 17:24:57,315 - __main__ - INFO -   â€¢ Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 17:24:57,316 - __main__ - INFO -   â€¢ Mister Raghav Vasal: recognized 0 times
+2026-03-17 17:24:57,316 - __main__ - INFO -   â€¢ Chairman Mister K Vasal: recognized 0 times
+2026-03-17 17:24:57,316 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 17:24:57,665 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 17:24:57,666 - __main__ - INFO - 
+==================================================
+2026-03-17 17:24:57,666 - __main__ - INFO - Robot is now running
+2026-03-17 17:24:57,666 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 17:24:57,666 - __main__ - INFO - ==================================================
+
+2026-03-17 17:24:57,666 - src.robot_dialog - INFO - Robot says: Robot is now online and ready to assist.
+2026-03-17 17:24:58,960 - __main__ - INFO - Recognized: Gopal (confidence: 69.58%)
+2026-03-17 17:25:01,204 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 17:25:09,177 - __main__ - INFO - Recognized: Gopal (confidence: 70.02%)
+2026-03-17 17:25:10,178 - src.robot_dialog - INFO - Robot says: How can I make your work easier?
+2026-03-17 17:25:19,603 - __main__ - INFO - Recognized: Gopal (confidence: 70.76%)
+2026-03-17 17:25:20,604 - src.robot_dialog - INFO - Robot says: How is your day going?
+2026-03-17 17:25:29,880 - __main__ - INFO - Recognized: Gopal (confidence: 71.61%)
+2026-03-17 17:25:29,881 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 17:25:36,209 - src.robot_dialog - INFO - Robot says: How is your day going?
+2026-03-17 17:25:40,628 - __main__ - INFO - Recognized: Gopal (confidence: 71.47%)
+2026-03-17 17:25:41,629 - src.robot_dialog - INFO - Robot says: Would you like to check any updates?
+2026-03-17 17:25:43,759 - __main__ - INFO - Recognized: Abhay (confidence: 54.31%)
+2026-03-17 17:25:44,625 - src.robot_dialog - INFO - Robot says: Good evening Abhay, nice to meet you. How can I assist you today?
+2026-03-17 17:25:49,180 - __main__ - INFO - Quit command received
+2026-03-17 17:25:51,529 - __main__ - INFO - Camera stopped
+2026-03-17 17:25:53,541 - __main__ - INFO - 
+==================================================
+2026-03-17 17:25:53,541 - __main__ - INFO - Robot shutdown complete
+2026-03-17 17:25:53,541 - __main__ - INFO - ==================================================
+2026-03-17 17:59:16,468 - __main__ - INFO - ==================================================
+2026-03-17 17:59:16,468 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 17:59:16,469 - __main__ - INFO - ==================================================
+2026-03-17 17:59:16,469 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 17:59:16,565 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 17:59:16,565 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 17:59:16,729 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:59:16,729 - src.robot_dialog - INFO - SELECTING INDIAN ACCENT VOICE
+2026-03-17 17:59:16,729 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:59:16,730 - src.robot_dialog - INFO - Voice 0: Microsoft David Desktop - English (United States)
+2026-03-17 17:59:16,730 - src.robot_dialog - INFO - Voice 1: Microsoft Zira Desktop - English (United States)
+2026-03-17 17:59:16,730 - src.robot_dialog - INFO - âœ… SELECTED VOICE (adjustable): Microsoft Zira Desktop - English (United States)
+2026-03-17 17:59:16,730 - src.robot_dialog - INFO - ==================================================
+2026-03-17 17:59:17,444 - src.robot_dialog - INFO - Calibrating microphone for ambient noise...
+2026-03-17 17:59:18,467 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 17:59:18,467 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 17:59:18,467 - __main__ - INFO - âœ… Selected Indian voice: Microsoft David Desktop - English (United States)
+2026-03-17 17:59:18,467 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 17:59:18,467 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 17:59:18,467 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 17:59:18,467 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 17:59:18,467 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 17:59:18,467 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 17:59:18,467 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 17:59:18,467 - __main__ - INFO - No new faces to load
+2026-03-17 17:59:18,467 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 17:59:18,467 - __main__ - INFO -   Total known faces: 5
+2026-03-17 17:59:18,467 - __main__ - INFO -   â€¢ Abhay: recognized 0 times
+2026-03-17 17:59:18,467 - __main__ - INFO -   â€¢ Gopal: recognized 0 times
+2026-03-17 17:59:18,467 - __main__ - INFO -   â€¢ Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 17:59:18,467 - __main__ - INFO -   â€¢ Mister Raghav Vasal: recognized 0 times
+2026-03-17 17:59:18,467 - __main__ - INFO -   â€¢ Chairman Mister K Vasal: recognized 0 times
+2026-03-17 17:59:18,486 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 17:59:18,854 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 17:59:18,854 - __main__ - INFO - 
+==================================================
+2026-03-17 17:59:18,854 - __main__ - INFO - Robot is now running
+2026-03-17 17:59:18,854 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 17:59:18,854 - __main__ - INFO - ==================================================
+
+2026-03-17 17:59:18,854 - src.robot_dialog - INFO - Robot says: Robot is now online and ready to assist.
+2026-03-17 17:59:19,999 - __main__ - INFO - Recognized: Gopal (confidence: 66.02%)
+2026-03-17 17:59:22,385 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 17:59:30,685 - __main__ - INFO - Recognized: Gopal (confidence: 69.18%)
+2026-03-17 17:59:41,353 - __main__ - INFO - Recognized: Gopal (confidence: 72.32%)
+2026-03-17 17:59:42,360 - src.robot_dialog - INFO - Robot says: Is there anything I can help you with?
+2026-03-17 17:59:46,282 - src.robot_dialog - INFO - Listening...
+2026-03-17 17:59:51,332 - src.robot_dialog - INFO - User said (Hindi):    
+2026-03-17 17:59:54,392 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:00:00,449 - src.robot_dialog - INFO - User said (Hindi):    
+2026-03-17 18:00:01,486 - src.robot_dialog - INFO - Robot says: How can I make your work easier?
+2026-03-17 18:00:01,865 - __main__ - INFO - Recognized: Gopal (confidence: 69.28%)
+2026-03-17 18:00:04,285 - src.robot_dialog - INFO - Robot says:            
+2026-03-17 18:00:04,388 - src.robot_dialog - INFO - Robot says:    
+2026-03-17 18:00:04,730 - src.robot_dialog - INFO - Robot says:      ?
+2026-03-17 18:00:04,828 - src.robot_dialog - INFO - Robot says:        ?
+2026-03-17 18:00:04,923 - src.robot_dialog - INFO - Robot says:   Gopal,    ,       ?
+2026-03-17 18:00:11,889 - __main__ - INFO - Recognized: Gopal (confidence: 66.93%)
+2026-03-17 18:00:12,691 - __main__ - INFO - Recognized: Abhay (confidence: 72.18%)
+2026-03-17 18:00:12,693 - src.robot_dialog - INFO - Robot says:   Abhay,    ,       ?
+2026-03-17 18:00:14,436 - src.robot_dialog - INFO - Robot says:      ?
+2026-03-17 18:00:17,169 - __main__ - INFO - Quit command received
+2026-03-17 18:00:17,169 - src.robot_dialog - INFO - Robot says: Goodbye. It was nice chatting with you.
+2026-03-17 18:00:19,529 - __main__ - INFO - Camera stopped
+2026-03-17 18:00:21,542 - __main__ - INFO - 
+==================================================
+2026-03-17 18:00:21,542 - __main__ - INFO - Robot shutdown complete
+2026-03-17 18:00:21,542 - __main__ - INFO - ==================================================
+2026-03-17 18:07:45,050 - __main__ - INFO - ==================================================
+2026-03-17 18:07:45,051 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 18:07:45,051 - __main__ - INFO - ==================================================
+2026-03-17 18:07:45,052 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 18:07:45,097 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 18:07:45,097 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 18:07:45,655 - src.robot_dialog - INFO - Calibrating microphone...
+2026-03-17 18:07:46,679 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 18:07:46,679 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 18:07:46,679 - __main__ - INFO - âœ… Selected Indian voice: Microsoft David Desktop - English (United States)
+2026-03-17 18:07:46,679 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 18:07:46,679 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 18:07:46,680 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 18:07:46,680 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 18:07:46,680 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 18:07:46,680 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 18:07:46,680 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 18:07:46,680 - __main__ - INFO - No new faces to load
+2026-03-17 18:07:46,680 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 18:07:46,681 - __main__ - INFO -   Total known faces: 5
+2026-03-17 18:07:46,681 - __main__ - INFO -   â€¢ Abhay: recognized 0 times
+2026-03-17 18:07:46,681 - __main__ - INFO -   â€¢ Gopal: recognized 0 times
+2026-03-17 18:07:46,681 - __main__ - INFO -   â€¢ Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 18:07:46,681 - __main__ - INFO -   â€¢ Mister Raghav Vasal: recognized 0 times
+2026-03-17 18:07:46,681 - __main__ - INFO -   â€¢ Chairman Mister K Vasal: recognized 0 times
+2026-03-17 18:07:46,681 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 18:07:46,922 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 18:07:46,922 - __main__ - INFO - 
+==================================================
+2026-03-17 18:07:46,922 - __main__ - INFO - Robot is now running
+2026-03-17 18:07:46,922 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 18:07:46,922 - __main__ - INFO - ==================================================
+
+2026-03-17 18:07:46,922 - src.robot_dialog - INFO - Robot says: Robot is now online and ready to assist.
+2026-03-17 18:07:47,912 - __main__ - INFO - Recognized: Gopal (confidence: 69.94%)
+2026-03-17 18:07:50,421 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:07:57,700 - src.robot_dialog - INFO - Robot says: What tasks are you focusing on today?
+2026-03-17 18:07:58,803 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:08:05,164 - src.robot_dialog - INFO - User said (Hindi):    
+2026-03-17 18:08:07,219 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:08:11,701 - src.robot_dialog - INFO - Robot says:     
+2026-03-17 18:08:12,201 - __main__ - INFO - Recognized: Gopal (confidence: 69.34%)
+2026-03-17 18:08:15,704 - src.robot_dialog - INFO - Robot says:     ?
+2026-03-17 18:08:22,615 - __main__ - INFO - Recognized: Gopal (confidence: 70.73%)
+2026-03-17 18:08:22,615 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:08:30,232 - src.robot_dialog - INFO - Robot says:       ?
+2026-03-17 18:08:33,126 - __main__ - INFO - Recognized: Gopal (confidence: 69.40%)
+2026-03-17 18:08:43,794 - __main__ - INFO - Recognized: Gopal (confidence: 65.59%)
+2026-03-17 18:08:52,715 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:08:54,840 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:09:00,314 - src.robot_dialog - INFO - Robot says:         ?
+2026-03-17 18:09:02,325 - __main__ - INFO - Recognized: Gopal (confidence: 68.75%)
+2026-03-17 18:09:12,692 - __main__ - INFO - Recognized: Gopal (confidence: 57.68%)
+2026-03-17 18:09:23,107 - __main__ - INFO - Recognized: Gopal (confidence: 64.78%)
+2026-03-17 18:09:23,107 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:09:33,319 - __main__ - INFO - Recognized: Gopal (confidence: 65.51%)
+2026-03-17 18:09:50,212 - __main__ - INFO - Recognized: Gopal (confidence: 59.24%)
+2026-03-17 18:10:03,702 - __main__ - INFO - Recognized: Gopal (confidence: 64.57%)
+2026-03-17 18:10:03,702 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:10:14,120 - __main__ - INFO - Recognized: Gopal (confidence: 67.12%)
+2026-03-17 18:10:19,847 - __main__ - INFO - Quit command received
+2026-03-17 18:10:19,847 - src.robot_dialog - INFO - Robot says: Goodbye. It was nice chatting with you.
+2026-03-17 18:10:22,224 - __main__ - INFO - Camera stopped
+2026-03-17 18:10:24,235 - __main__ - INFO - 
+==================================================
+2026-03-17 18:10:24,235 - __main__ - INFO - Robot shutdown complete
+2026-03-17 18:10:24,235 - __main__ - INFO - ==================================================
+2026-03-17 18:10:31,963 - __main__ - INFO - ==================================================
+2026-03-17 18:10:31,964 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 18:10:31,964 - __main__ - INFO - ==================================================
+2026-03-17 18:10:31,964 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 18:10:32,010 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 18:10:32,011 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 18:10:32,743 - src.robot_dialog - INFO - Calibrating microphone...
+2026-03-17 18:10:33,767 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 18:10:33,767 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 18:10:33,767 - __main__ - INFO - âœ… Selected Indian voice: Microsoft David Desktop - English (United States)
+2026-03-17 18:10:33,767 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 18:10:33,767 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 18:10:33,769 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 18:10:33,769 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 18:10:33,769 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 18:10:33,769 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 18:10:33,769 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 18:10:33,769 - __main__ - INFO - No new faces to load
+2026-03-17 18:10:33,769 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 18:10:33,769 - __main__ - INFO -   Total known faces: 5
+2026-03-17 18:10:33,769 - __main__ - INFO -   â€¢ Abhay: recognized 0 times
+2026-03-17 18:10:33,769 - __main__ - INFO -   â€¢ Gopal: recognized 0 times
+2026-03-17 18:10:33,769 - __main__ - INFO -   â€¢ Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 18:10:33,769 - __main__ - INFO -   â€¢ Mister Raghav Vasal: recognized 0 times
+2026-03-17 18:10:33,769 - __main__ - INFO -   â€¢ Chairman Mister K Vasal: recognized 0 times
+2026-03-17 18:10:33,769 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 18:10:34,009 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 18:10:34,009 - __main__ - INFO - 
+==================================================
+2026-03-17 18:10:34,009 - __main__ - INFO - Robot is now running
+2026-03-17 18:10:34,009 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 18:10:34,009 - __main__ - INFO - ==================================================
+
+2026-03-17 18:10:34,009 - src.robot_dialog - INFO - Robot says: Robot is now online and ready to assist.
+2026-03-17 18:10:34,996 - __main__ - INFO - Recognized: Gopal (confidence: 69.90%)
+2026-03-17 18:10:37,501 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:10:45,507 - __main__ - INFO - Recognized: Gopal (confidence: 67.55%)
+2026-03-17 18:10:55,826 - __main__ - INFO - Recognized: Gopal (confidence: 67.38%)
+2026-03-17 18:11:06,323 - __main__ - INFO - Recognized: Gopal (confidence: 68.48%)
+2026-03-17 18:11:06,323 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:11:16,526 - __main__ - INFO - Recognized: Gopal (confidence: 66.99%)
+2026-03-17 18:11:26,561 - src.robot_dialog - INFO - Robot says: How is your day going?
+2026-03-17 18:11:27,650 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:11:32,305 - __main__ - INFO - Recognized: Gopal (confidence: 70.99%)
+2026-03-17 18:11:33,307 - src.robot_dialog - INFO - Robot says: What would you like to discuss?
+2026-03-17 18:11:43,011 - __main__ - INFO - Recognized: Gopal (confidence: 69.41%)
+2026-03-17 18:11:43,011 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:11:53,987 - __main__ - INFO - Recognized: Gopal (confidence: 72.20%)
+2026-03-17 18:11:54,988 - src.robot_dialog - INFO - Robot says: What work are you doing currently?
+2026-03-17 18:12:04,196 - __main__ - INFO - Recognized: Gopal (confidence: 71.13%)
+2026-03-17 18:12:05,197 - src.robot_dialog - INFO - Robot says: Whom can I recognize?
+2026-03-17 18:12:14,404 - __main__ - INFO - Recognized: Gopal (confidence: 70.90%)
+2026-03-17 18:12:14,404 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:12:20,343 - src.robot_dialog - INFO - Robot says: How can I make your work easier?
+2026-03-17 18:12:24,868 - __main__ - INFO - Recognized: Gopal (confidence: 70.14%)
+2026-03-17 18:12:25,869 - src.robot_dialog - INFO - Robot says: What work are you doing currently?
+2026-03-17 18:12:29,208 - __main__ - INFO - Quit command received
+2026-03-17 18:12:29,209 - src.robot_dialog - INFO - Robot says: Goodbye. It was nice chatting with you.
+2026-03-17 18:12:31,600 - __main__ - INFO - Camera stopped
+2026-03-17 18:12:33,609 - __main__ - INFO - 
+==================================================
+2026-03-17 18:12:33,609 - __main__ - INFO - Robot shutdown complete
+2026-03-17 18:12:33,609 - __main__ - INFO - ==================================================
+2026-03-17 18:16:03,408 - __main__ - INFO - ==================================================
+2026-03-17 18:16:03,408 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 18:16:03,408 - __main__ - INFO - ==================================================
+2026-03-17 18:16:03,409 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 18:16:03,452 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 18:16:03,453 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 18:16:03,952 - src.robot_dialog - INFO - Calibrating microphone...
+2026-03-17 18:16:04,976 - __main__ - INFO - Available voices for Indian Female selection:
+2026-03-17 18:16:04,977 - __main__ - INFO - Voice 0: ID=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0, Name=Microsoft David Desktop - English (United States)
+2026-03-17 18:16:04,977 - __main__ - INFO - âœ… Selected Indian voice: Microsoft David Desktop - English (United States)
+2026-03-17 18:16:04,977 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 18:16:04,977 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 18:16:04,978 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 18:16:04,978 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 18:16:04,978 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 18:16:04,978 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 18:16:04,978 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 18:16:04,978 - __main__ - INFO - No new faces to load
+2026-03-17 18:16:04,978 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 18:16:04,978 - __main__ - INFO -   Total known faces: 5
+2026-03-17 18:16:04,978 - __main__ - INFO -   â€¢ Abhay: recognized 0 times
+2026-03-17 18:16:04,978 - __main__ - INFO -   â€¢ Gopal: recognized 0 times
+2026-03-17 18:16:04,978 - __main__ - INFO -   â€¢ Miss iz Sanjeev Chauhan: recognized 0 times
+2026-03-17 18:16:04,978 - __main__ - INFO -   â€¢ Mister Raghav Vasal: recognized 0 times
+2026-03-17 18:16:04,978 - __main__ - INFO -   â€¢ Chairman Mister K Vasal: recognized 0 times
+2026-03-17 18:16:04,978 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 18:16:05,224 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 18:16:05,224 - __main__ - INFO - 
+==================================================
+2026-03-17 18:16:05,224 - __main__ - INFO - Robot is now running
+2026-03-17 18:16:05,224 - __main__ - INFO - Press 'q' to quit, 's' to save unknown face, 'a' to add new face
+2026-03-17 18:16:05,224 - __main__ - INFO - ==================================================
+
+2026-03-17 18:16:05,224 - src.robot_dialog - INFO - Robot says: Robot is now online and ready to assist.
+2026-03-17 18:16:06,222 - __main__ - INFO - Recognized: Gopal (confidence: 72.76%)
+2026-03-17 18:16:08,706 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:16:14,459 - src.robot_dialog - INFO - Robot says: How is your day going?
+2026-03-17 18:16:16,633 - __main__ - INFO - Recognized: Gopal (confidence: 69.67%)
+2026-03-17 18:16:25,939 - src.robot_dialog - INFO - Robot says: What work are you doing currently?
+2026-03-17 18:16:27,038 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:16:32,029 - src.robot_dialog - INFO - User said (Hindi):      
+2026-03-17 18:16:34,092 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:16:40,699 - src.robot_dialog - INFO - Robot says:        ?
+2026-03-17 18:16:41,432 - __main__ - INFO - Recognized: Gopal (confidence: 71.83%)
+2026-03-17 18:16:46,444 - src.robot_dialog - INFO - Robot says:     ?
+2026-03-17 18:16:50,234 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:16:51,541 - __main__ - INFO - Recognized: Gopal (confidence: 69.28%)
+2026-03-17 18:16:57,887 - src.robot_dialog - INFO - Robot says:        ?
+2026-03-17 18:17:02,021 - __main__ - INFO - Recognized: Gopal (confidence: 69.74%)
+2026-03-17 18:17:12,502 - __main__ - INFO - Recognized: Chairman Mister K Vasal (confidence: 70.78%)
+2026-03-17 18:17:12,503 - src.robot_dialog - INFO - Robot says:   Chairman Mister K Vasal,           ?
+2026-03-17 18:17:13,503 - __main__ - INFO - Recognized: Gopal (confidence: 69.25%)
+2026-03-17 18:17:21,601 - src.robot_dialog - INFO - Robot says:     ?
+2026-03-17 18:17:22,715 - __main__ - INFO - Recognized: Gopal (confidence: 62.81%)
+2026-03-17 18:17:25,150 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:17:33,009 - __main__ - INFO - Recognized: Gopal (confidence: 68.07%)
+2026-03-17 18:17:43,125 - __main__ - INFO - Recognized: Gopal (confidence: 67.78%)
+2026-03-17 18:17:43,785 - __main__ - INFO - Recognized: Chairman Mister K Vasal (confidence: 64.31%)
+2026-03-17 18:17:43,785 - src.robot_dialog - INFO - Robot says:   Chairman Mister K Vasal,           ?
+2026-03-17 18:17:54,197 - __main__ - INFO - Recognized: Chairman Mister K Vasal (confidence: 64.91%)
+2026-03-17 18:18:00,034 - __main__ - INFO - Recognized: Gopal (confidence: 68.01%)
+2026-03-17 18:18:00,034 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:18:04,583 - __main__ - INFO - Quit command received
+2026-03-17 18:18:06,912 - __main__ - INFO - Camera stopped
+2026-03-17 18:18:08,498 - src.robot_dialog - INFO - Robot says: Goodbye. It was nice chatting with you.
+2026-03-17 18:18:08,924 - __main__ - INFO - 
+==================================================
+2026-03-17 18:18:08,924 - __main__ - INFO - Robot shutdown complete
+2026-03-17 18:18:08,924 - __main__ - INFO - ==================================================
+2026-03-17 18:21:03,132 - __main__ - INFO - ==================================================
+2026-03-17 18:21:03,132 - __main__ - INFO - Initializing Professional Face Recognition Robot
+2026-03-17 18:21:03,132 - __main__ - INFO - ==================================================
+2026-03-17 18:21:03,132 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 18:21:03,177 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 18:21:03,177 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 18:21:03,710 - src.robot_dialog - INFO - Calibrating microphone...
+2026-03-17 18:21:04,734 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 18:21:04,735 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 18:21:04,735 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 18:21:04,735 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 18:21:04,736 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 18:21:04,736 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 18:21:04,736 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 18:21:04,736 - __main__ - INFO - No new faces to load
+2026-03-17 18:21:04,736 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 18:21:04,736 - __main__ - INFO -   Total known faces: 5
+2026-03-17 18:21:04,736 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 18:21:04,981 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 18:21:04,981 - __main__ - INFO - 
+==================================================
+2026-03-17 18:21:04,981 - __main__ - INFO - Robot is now running (MINIMAL UI MODE)
+2026-03-17 18:21:04,981 - __main__ - INFO - Press 'q' to quit
+2026-03-17 18:21:04,981 - __main__ - INFO - ==================================================
+
+2026-03-17 18:21:04,981 - src.robot_dialog - INFO - Robot says: Robot is online.
+2026-03-17 18:21:06,043 - __main__ - INFO - Recognized: Gopal (68.59%)
+2026-03-17 18:21:07,170 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:21:16,636 - __main__ - INFO - Recognized: Gopal (68.12%)
+2026-03-17 18:21:26,943 - __main__ - INFO - Recognized: Gopal (65.66%)
+2026-03-17 18:21:28,363 - src.robot_dialog - INFO - Robot says: What would you like to discuss?
+2026-03-17 18:21:29,463 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:21:37,233 - __main__ - INFO - Recognized: Gopal (64.29%)
+2026-03-17 18:21:37,233 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:21:48,744 - __main__ - INFO - Recognized: Gopal (67.87%)
+2026-03-17 18:21:50,497 - __main__ - INFO - Quit command received
+2026-03-17 18:21:50,497 - src.robot_dialog - INFO - Robot says: Goodbye.
+2026-03-17 18:21:50,874 - __main__ - INFO - Camera stopped
+2026-03-17 18:21:50,884 - __main__ - INFO - Robot shutdown complete
+2026-03-17 18:27:11,274 - __main__ - INFO - ==================================================
+2026-03-17 18:27:11,275 - __main__ - INFO - Initializing Face Recognition Robot (MINIMAL UI)
+2026-03-17 18:27:11,275 - __main__ - INFO - ==================================================
+2026-03-17 18:27:11,275 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 18:27:11,323 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 18:27:11,323 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 18:27:11,874 - src.robot_dialog - INFO - Calibrating microphone...
+2026-03-17 18:27:12,897 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 18:27:12,898 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 18:27:12,898 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 18:27:12,898 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 18:27:12,898 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 18:27:12,898 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 18:27:12,898 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 18:27:12,899 - __main__ - INFO - No new faces to load
+2026-03-17 18:27:12,899 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 18:27:12,899 - __main__ - INFO -   Total known faces: 5
+2026-03-17 18:27:12,899 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 18:27:13,147 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 18:27:13,147 - __main__ - INFO - 
+==================================================
+2026-03-17 18:27:13,147 - __main__ - INFO - Robot is now running (MINIMAL UI - NO CHAT TRANSCRIPT)
+2026-03-17 18:27:13,147 - __main__ - INFO - Press 'q' to quit
+2026-03-17 18:27:13,148 - __main__ - INFO - ==================================================
+
+2026-03-17 18:27:13,148 - src.robot_dialog - INFO - Robot says: Robot is online.
+2026-03-17 18:27:14,138 - __main__ - INFO - Recognized: Gopal (67.56%)
+2026-03-17 18:27:15,594 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:27:24,739 - __main__ - INFO - Recognized: Gopal (67.16%)
+2026-03-17 18:27:29,014 - src.robot_dialog - INFO - Robot says: What work are you doing currently?
+2026-03-17 18:27:30,118 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:27:35,665 - src.robot_dialog - INFO - User said (Hindi):        
+2026-03-17 18:27:36,715 - src.robot_dialog - INFO - Robot says:     
+2026-03-17 18:27:37,240 - __main__ - INFO - Recognized: Gopal (73.06%)
+2026-03-17 18:27:41,034 - src.robot_dialog - INFO - Robot says:       ?
+2026-03-17 18:27:48,950 - __main__ - INFO - Recognized: Gopal (66.00%)
+2026-03-17 18:27:48,952 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:27:59,021 - __main__ - INFO - Recognized: Gopal (64.84%)
+2026-03-17 18:28:01,334 - __main__ - INFO - Quit command received
+2026-03-17 18:28:01,334 - src.robot_dialog - INFO - Robot says: Goodbye.
+2026-03-17 18:28:01,647 - __main__ - INFO - Camera stopped
+2026-03-17 18:28:01,656 - __main__ - INFO - Runtime: 0:00:48.757139
+2026-03-17 18:28:01,658 - __main__ - INFO - Faces detected: 52
+2026-03-17 18:28:01,658 - __main__ - INFO - Recognitions: 51
+2026-03-17 18:28:01,658 - __main__ - INFO - Robot shutdown complete
+2026-03-17 18:28:06,968 - __main__ - INFO - ==================================================
+2026-03-17 18:28:06,968 - __main__ - INFO - Initializing Face Recognition Robot (MINIMAL UI)
+2026-03-17 18:28:06,969 - __main__ - INFO - ==================================================
+2026-03-17 18:28:06,969 - src.face_recognizer - INFO - âœ“ Loaded 5 known faces: Abhay, Gopal, Miss iz Sanjeev Chauhan, Mister Raghav Vasal, Chairman Mister K Vasal
+2026-03-17 18:28:06,999 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\gopal\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-17 18:28:07,013 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\gopal\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-03-17 18:28:07,292 - src.robot_dialog - INFO - Calibrating microphone...
+2026-03-17 18:28:08,323 - __main__ - INFO - 
+Loading known faces...
+2026-03-17 18:28:08,323 - src.face_recognizer - INFO - Found 4 image files in C:\face_recognition_robot\known_faces
+2026-03-17 18:28:08,323 - src.face_recognizer - INFO - Face 'Abhay' already exists, skipping...
+2026-03-17 18:28:08,323 - src.face_recognizer - INFO - Face 'Gopal' already exists, skipping...
+2026-03-17 18:28:08,323 - src.face_recognizer - INFO - Face 'Miss iz Sanjeev Chauhan' already exists, skipping...
+2026-03-17 18:28:08,326 - src.face_recognizer - INFO - Face 'Mister Raghav Vasal' already exists, skipping...
+2026-03-17 18:28:08,326 - src.face_recognizer - INFO - âœ“ Successfully loaded 0 new faces
+2026-03-17 18:28:08,326 - __main__ - INFO - No new faces to load
+2026-03-17 18:28:08,326 - __main__ - INFO - 
+Current Face Database:
+2026-03-17 18:28:08,326 - __main__ - INFO -   Total known faces: 5
+2026-03-17 18:28:08,326 - src.robot_dialog - INFO - Updated known faces list: ['Abhay', 'Gopal', 'Miss iz Sanjeev Chauhan', 'Mister Raghav Vasal', 'Chairman Mister K Vasal']
+2026-03-17 18:28:08,552 - __main__ - INFO - Camera started successfully (ID: 0)
+2026-03-17 18:28:08,552 - __main__ - INFO - 
+==================================================
+2026-03-17 18:28:08,555 - __main__ - INFO - Robot is now running (MINIMAL UI - NO CHAT TRANSCRIPT)
+2026-03-17 18:28:08,555 - __main__ - INFO - Press 'q' to quit
+2026-03-17 18:28:08,556 - __main__ - INFO - ==================================================
+
+2026-03-17 18:28:08,556 - src.robot_dialog - INFO - Robot says: Robot is online.
+2026-03-17 18:28:09,536 - __main__ - INFO - Recognized: Gopal (67.44%)
+2026-03-17 18:28:10,792 - src.robot_dialog - INFO - Robot says: Good evening Gopal, nice to meet you. How can I assist you today?
+2026-03-17 18:28:15,419 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:28:20,749 - src.robot_dialog - INFO - User said (Hindi):        
+2026-03-17 18:28:21,773 - src.robot_dialog - INFO - Robot says: How is your day going?
+2026-03-17 18:28:22,062 - __main__ - INFO - Recognized: Gopal (60.37%)
+2026-03-17 18:28:24,652 - src.robot_dialog - INFO - Robot says:     
+2026-03-17 18:28:33,772 - __main__ - INFO - Recognized: Gopal (55.97%)
+2026-03-17 18:28:44,080 - __main__ - INFO - Recognized: Gopal (70.71%)
+2026-03-17 18:28:44,080 - src.robot_dialog - INFO - Robot says:   Gopal,           ?
+2026-03-17 18:28:47,773 - src.robot_dialog - INFO - Listening...
+2026-03-17 18:28:51,328 - src.robot_dialog - INFO - User said (Hindi): 
+2026-03-17 18:28:51,790 - src.robot_dialog - INFO - Robot says:      ?
+2026-03-17 18:28:54,536 - __main__ - INFO - Recognized: Gopal (62.41%)
+2026-03-17 18:28:54,536 - __main__ - INFO - Quit command received
+2026-03-17 18:28:54,925 - __main__ - INFO - Camera stopped
+2026-03-17 18:28:54,933 - __main__ - INFO - Runtime: 0:00:46.606956
+2026-03-17 18:28:54,934 - __main__ - INFO - Faces detected: 37
+2026-03-17 18:28:54,934 - __main__ - INFO - Recognitions: 37
+2026-03-17 18:28:54,934 - __main__ - INFO - Robot shutdown complete

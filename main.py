@@ -27,40 +27,28 @@ class ProfessionalFaceRobot:
         self.last_greeting_time = {}
         self.current_faces = []
         
-        # Chat interface variables
-        self.chat_messages = []
-        self.chat_scroll = 0
-        self.last_user_input = ""
+        # Minimal UI - no chat transcript
         self.robot_thinking = False
-        self.typing_animation = 0
+        self.last_action = ""  # Show only current action
         
-        # Dark theme color palette (professional, no emojis)
+        # Ultra-minimal color palette
         self.colors = {
-            'bg_dark': (10, 10, 10),        # Almost black
-            'bg_medium': (20, 20, 20),       # Very dark gray
-            'bg_light': (10, 10, 10),         # Dark gray
-            'accent_blue': (0, 120, 255),     # Professional blue
-            'accent_green': (0, 200, 0),      # Success green
-            'accent_orange': (255, 140, 0),   # Warning orange
-            'accent_red': (255, 50, 50),      # Error red
-            'text_primary': (240, 240, 240),  # Off-white
-            'text_secondary': (180, 180, 180), # Light gray
-            'text_muted': (120, 120, 120),    # Medium gray
-            'border': (60, 60, 60),           # Gray border
-            'robot_bubble': (0, 80, 160),     # Dark blue
-            'user_bubble': (60, 60, 80)       # Dark gray-blue
+            'green': (0, 255, 0),
+            'orange': (0, 165, 255),
+            'blue': (255, 0, 0),
+            'red': (0, 0, 255),
+            'white': (255, 255, 255),
+            'gray': (100, 100, 100),
+            'black': (0, 0, 0)
         }
         
         # Initialize components
         logger.info("="*50)
-        logger.info("Initializing Professional Face Recognition Robot")
+        logger.info("Initializing Face Recognition Robot (MINIMAL UI)")
         logger.info("="*50)
         
         self.recognizer = FaceRecognizer()
         self.robot = RobotDialog(robot_name=ROBOT_NAME)
-        
-        # Set Indian Female voice
-        self.set_indian_female_voice()
         
         # Load faces from folder
         self.load_known_faces()
@@ -74,9 +62,8 @@ class ProfessionalFaceRobot:
             'unknown_faces': 0
         }
         
-        # Add welcome message to chat (no emojis)
-        self.add_chat_message("robot", f"Hello, I am {ROBOT_NAME}, your AI assistant. I can recognize faces and chat with you.")
-        self.add_chat_message("robot", "Press 't' for conversation or let me recognize your face.")
+        # No chat messages stored
+        self.last_greeting = ""
         
         # Update robot with initial known faces
         self.robot.update_known_faces(self.recognizer.known_face_names)
@@ -102,7 +89,7 @@ class ProfessionalFaceRobot:
                 indian_voice_found = True
                 break
         
-        # If no Indian voice, try to find a female voice with Indian-like parameters
+        # If no Indian voice, try to find a female voice
         if not indian_voice_found:
             for voice in voices:
                 voice_lower = voice.name.lower()
@@ -112,44 +99,20 @@ class ProfessionalFaceRobot:
                     indian_voice_found = True
                     break
         
-        # If still no voice, use default but set parameters for Indian-like tone
+        # If still no voice, use default
         if not indian_voice_found and len(voices) > 0:
             self.robot.tts_engine.setProperty('voice', voices[0].id)
             logger.info(f"✅ Using default voice: {voices[0].name}")
         
-        # Set voice parameters for Indian accent simulation
-        self.robot.tts_engine.setProperty('rate', 150)  # Slightly slower for clarity
+        # Set voice parameters
+        self.robot.tts_engine.setProperty('rate', 150)
         self.robot.tts_engine.setProperty('volume', 0.9)
         
-        # Try to set pitch if available (helps with accent)
+        # Try to set pitch if available
         try:
-            self.robot.tts_engine.setProperty('pitch', 120)  # Slightly higher pitch
+            self.robot.tts_engine.setProperty('pitch', 120)
         except:
-            pass  # Pitch not available in all engines
-    
-    def make_robot_softer(self):
-        """Make robot voice softer and more pleasant"""
-        # This method is now integrated into set_indian_female_voice
-        pass
-    
-    def remove_emojis(self, text):
-        """Remove emojis from text"""
-        # Simple emoji removal - keep only ASCII characters
-        return text.encode('ascii', 'ignore').decode('ascii')
-    
-    def add_chat_message(self, sender, message):
-        """Add a message to the chat history"""
-        timestamp = datetime.now().strftime("%H:%M:%S")
-        self.chat_messages.append({
-            'sender': sender,
-            'message': message,
-            'timestamp': timestamp,
-            'time': time.time()
-        })
-        
-        # Keep only last 20 messages
-        if len(self.chat_messages) > 20:
-            self.chat_messages = self.chat_messages[-20:]
+            pass
     
     def load_known_faces(self):
         """Load known faces from folder"""
@@ -158,8 +121,6 @@ class ProfessionalFaceRobot:
         
         if count > 0:
             logger.info(f"Successfully loaded {count} new faces")
-            self.add_chat_message("robot", f"I have learned {count} new face{'s' if count > 1 else ''}.")
-            # Update robot's known faces list
             self.robot.update_known_faces(self.recognizer.known_face_names)
         else:
             logger.info("No new faces to load")
@@ -169,8 +130,6 @@ class ProfessionalFaceRobot:
         if stats['total_faces'] > 0:
             logger.info(f"\nCurrent Face Database:")
             logger.info(f"  Total known faces: {stats['total_faces']}")
-            for face in stats['faces']:
-                logger.info(f"  • {face['name']}: recognized {face['times_recognized']} times")
     
     def start_camera(self):
         """Start the camera with optimal settings"""
@@ -180,13 +139,13 @@ class ProfessionalFaceRobot:
             logger.error("Could not open camera")
             return False
         
-        # Set camera properties for better performance
+        # Optimize camera settings
         self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, FRAME_WIDTH)
         self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT)
         self.camera.set(cv2.CAP_PROP_FPS, 30)
+        self.camera.set(cv2.CAP_PROP_BUFFERSIZE, 1)  # Reduce buffer for less lag
         
         logger.info(f"Camera started successfully (ID: {self.camera_id})")
-        self.add_chat_message("robot", "Camera is online. Monitoring for faces...")
         return True
     
     def stop_camera(self):
@@ -197,8 +156,29 @@ class ProfessionalFaceRobot:
     
     def process_frame(self, frame):
         """Process a single frame for face recognition"""
+        # Resize for faster processing if frame is large
+        if frame.shape[1] > 640:
+            scale = 640 / frame.shape[1]
+            new_width = int(frame.shape[1] * scale)
+            new_height = int(frame.shape[0] * scale)
+            process_frame = cv2.resize(frame, (new_width, new_height))
+        else:
+            process_frame = frame
+        
         # Recognize faces
-        faces = self.recognizer.recognize_faces(frame)
+        faces = self.recognizer.recognize_faces(process_frame)
+        
+        # Scale face coordinates back if we resized
+        if frame.shape[1] > 640 and faces:
+            scale_factor = frame.shape[1] / new_width
+            for face in faces:
+                top, right, bottom, left = face['location']
+                face['location'] = (
+                    int(top * scale_factor),
+                    int(right * scale_factor),
+                    int(bottom * scale_factor),
+                    int(left * scale_factor)
+                )
         
         # Update statistics
         self.stats['frames_processed'] += 1
@@ -228,242 +208,110 @@ class ProfessionalFaceRobot:
             last_greeting = self.last_greeting_time.get(name, 0)
             
             if current_time - last_greeting > GREETING_COOLDOWN:
-                logger.info(f"Recognized: {name} (confidence: {confidence:.2%})")
+                logger.info(f"Recognized: {name} ({confidence:.2%})")
                 
-                # Use the new greeting format from robot_dialog
+                # Greet the person
                 self.robot.greet_person(name)
-                self.add_chat_message("robot", f"Welcome back, {name} (confidence: {confidence:.1%})")
+                self.last_greeting = f"Hello {name}"
                 
                 # Update last greeting time
                 self.last_greeting_time[name] = current_time
                 
                 # Ask a follow-up question for high confidence
-                if confidence > 0.7:  # High confidence
+                if confidence > 0.7:
                     time.sleep(1)
-                    question = self.robot.ask_question()
-                    self.add_chat_message("robot", question)
+                    self.robot.ask_question()
     
     def add_to_known_faces(self, frame, face, name):
         """Add an unknown face to known faces database"""
-        # Extract face region
         top, right, bottom, left = face['location']
         face_image = frame[top:bottom, left:right]
         
-        # Save temporarily
         temp_path = os.path.join(KNOWN_FACES_DIR, f"{name}.png")
         cv2.imwrite(temp_path, face_image)
         
-        # Add to recognizer
         success = self.recognizer.add_new_face(temp_path, name)
         
         if success:
-            self.robot.speak(f"Thank you. I will remember you as {name}.")
-            self.add_chat_message("robot", f"Nice to meet you, {name}. I have added your face to my database.")
+            self.robot.speak(f"I will remember you as {name}.")
+            self.last_greeting = f"Added {name}"
             logger.info(f"Added {name} to known faces")
-            # Update robot's known faces list
             self.robot.update_known_faces(self.recognizer.known_face_names)
         else:
-            self.robot.speak("I apologize, I could not add your face. Please try again.")
-            self.add_chat_message("robot", "I could not add your face. Please try again.")
+            self.robot.speak("Could not add face.")
+            self.last_greeting = "Failed to add"
             if os.path.exists(temp_path):
                 os.remove(temp_path)
         
         return success
     
-    def draw_dark_ui(self, frame, faces):
-       
+    def draw_minimal_ui(self, frame, faces):
+        """Ultra-minimal UI with no chat transcript"""
         h, w = frame.shape[:2]
         
-        # Create a copy for the UI
+        # Create a copy
         ui_frame = frame.copy()
         
-        # Create right panel for chat (30% of width)
-        panel_width = int(w * 0.3)
-        chat_x = w - panel_width
-        
-        # Draw dark chat panel
-        overlay = ui_frame.copy()
-        cv2.rectangle(overlay, (chat_x, 0), (w, h), self.colors['bg_dark'], -1)
-        cv2.addWeighted(overlay, 0.95, ui_frame, 0.05, 0, ui_frame)
-        
-        # Draw panel border
-        cv2.line(ui_frame, (chat_x, 0), (chat_x, h), self.colors['border'], 1)
-        
-        # Draw chat header
-        header_y = 40
-        cv2.putText(ui_frame, "CHAT", (chat_x + 20, header_y), 
-                   cv2.FONT_HERSHEY_DUPLEX, 0.7, self.colors['accent_blue'], 1)
-        
-        # Draw separator line
-        cv2.line(ui_frame, (chat_x + 10, header_y + 10), (w - 10, header_y + 10), 
-                self.colors['border'], 1)
-        
-        # Draw chat messages
-        message_y = header_y + 40
-        visible_messages = 10  # Number of messages visible at once
-        
-        start_idx = max(0, len(self.chat_messages) - visible_messages - self.chat_scroll)
-        end_idx = len(self.chat_messages) - self.chat_scroll
-        
-        for i, msg in enumerate(self.chat_messages[start_idx:end_idx]):
-            sender = msg['sender']
-            message = msg['message']
-            timestamp = msg['timestamp']
-            
-            # Calculate bubble dimensions
-            bubble_x = chat_x + 15
-            max_width = panel_width - 40
-            font_scale = 0.45
-            
-            # Split message into lines
-            words = message.split()
-            lines = []
-            current_line = ""
-            
-            for word in words:
-                test_line = current_line + " " + word if current_line else word
-                (text_width, _) = cv2.getTextSize(test_line, cv2.FONT_HERSHEY_SIMPLEX, font_scale, 1)[0]
-                
-                if text_width <= max_width - 20:
-                    current_line = test_line
-                else:
-                    if current_line:
-                        lines.append(current_line)
-                    current_line = word
-            
-            if current_line:
-                lines.append(current_line)
-            
-            # Calculate bubble height
-            line_height = 20
-            bubble_height = len(lines) * line_height + 20
-            
-            # Draw bubble background
-            bubble_color = self.colors['robot_bubble'] if sender == 'robot' else self.colors['user_bubble']
-            
-            # Draw message bubble (simple rectangle, no rounded corners)
-            cv2.rectangle(ui_frame, 
-                         (bubble_x, message_y - 5), 
-                         (bubble_x + max_width, message_y + bubble_height - 5), 
-                         bubble_color, -1)
-            
-            # Draw bubble border
-            cv2.rectangle(ui_frame, 
-                         (bubble_x, message_y - 5), 
-                         (bubble_x + max_width, message_y + bubble_height - 5), 
-                         self.colors['border'], 1)
-            
-            # Draw timestamp
-            cv2.putText(ui_frame, timestamp, 
-                       (bubble_x + max_width - 70, message_y - 10), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.35, self.colors['text_muted'], 1)
-            
-            # Draw sender label
-            sender_label = "ROBOT" if sender == 'robot' else "USER"
-            cv2.putText(ui_frame, sender_label, (bubble_x + 5, message_y - 10), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.4, self.colors['text_secondary'], 1)
-            
-            # Draw message lines
-            line_y = message_y + 15
-            for line in lines:
-                cv2.putText(ui_frame, line, (bubble_x + 10, line_y), 
-                           cv2.FONT_HERSHEY_SIMPLEX, font_scale, self.colors['text_primary'], 1)
-                line_y += line_height
-            
-            message_y += bubble_height + 10
-        
-        # Draw typing indicator if robot is thinking
-        if self.robot_thinking:
-            self.typing_animation = (self.typing_animation + 1) % 60
-            dots = "." * (self.typing_animation // 20 + 1)
-            typing_text = f"Robot is typing{dots}"
-            
-            cv2.putText(ui_frame, typing_text, (chat_x + 20, h - 30), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, self.colors['text_secondary'], 1)
-        
-        # Draw camera feed label
-        cv2.putText(ui_frame, "CAMERA FEED", (20, 30), 
-                   cv2.FONT_HERSHEY_DUPLEX, 0.6, self.colors['accent_blue'], 1)
-        
-        # Draw face boxes with clean styling
+        # Draw face boxes only
         for face in faces:
             top, right, bottom, left = face['location']
             name = face['name']
             confidence = face.get('confidence', 0)
             
-            # Choose color based on recognition
+            # Simple color coding
             if name == "Unknown":
-                color = self.colors['accent_orange']
-                label = f"Unknown ({confidence:.1%})" if confidence > 0 else "Unknown"
+                color = self.colors['orange']
+                label = "?"
             else:
-                color = self.colors['accent_green']
-                label = f"{name} ({confidence:.1%})"
+                color = self.colors['green']
+                label = name
             
-            # Draw bounding box
-            cv2.rectangle(ui_frame, (left, top), (right, bottom), color, 2)
+            # Draw bounding box (thin for performance)
+            cv2.rectangle(ui_frame, (left, top), (right, bottom), color, 1)
             
-            # Draw label background
-            label_bg = ui_frame.copy()
-            cv2.rectangle(label_bg, (left, top - 25), (right, top), color, -1)
-            cv2.addWeighted(label_bg, 0.8, ui_frame, 0.2, 0, ui_frame)
-            
-            # Draw label text
-            cv2.putText(ui_frame, label, (left + 5, top - 7), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, self.colors['text_primary'], 1)
+            # Simple label
+            cv2.putText(ui_frame, label, (left, top - 5), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1)
         
-        # Draw statistics in top left (clean, no emojis)
-        stats_y = 70
-        stat_items = [
-            f"Known: {len(self.recognizer.known_face_names)}",
-            f"Detected: {len(faces)}",
-            f"Frames: {self.stats['frames_processed']}"
-        ]
+        # Draw minimal stats at top
+        stats_text = f"Known: {len(self.recognizer.known_face_names)} | Now: {len(faces)}"
+        cv2.putText(ui_frame, stats_text, (10, 20), 
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.4, self.colors['white'], 1)
         
-        for stat in stat_items:
-            cv2.putText(ui_frame, stat, (20, stats_y), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, self.colors['text_secondary'], 1)
-            stats_y += 25
+        # Draw last greeting/action at bottom (single line, no chat history)
+        if self.last_greeting:
+            cv2.putText(ui_frame, self.last_greeting, (10, h - 30), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, self.colors['green'], 1)
         
-        # Draw instructions at bottom
-        inst_y = h - 30
-        instructions = [
-            ("Q", "Quit", self.colors['accent_red']),
-            ("S", "Save", self.colors['accent_orange']),
-            ("A", "Add", self.colors['accent_green']),
-            ("T", "Talk", self.colors['accent_blue']),
-            ("L", "Listen", self.colors['text_secondary'])
-        ]
+        # Draw minimal controls
+        controls = "Q:Quit S:Save A:Add T:Talk L:Listen"
+        cv2.putText(ui_frame, controls, (10, h - 10), 
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.35, self.colors['gray'], 1)
         
-        x_offset = 20
-        for key, action, color in instructions:
-            # Draw key button
-            cv2.rectangle(ui_frame, (x_offset - 5, inst_y - 15), 
-                         (x_offset + 20, inst_y + 5), color, 1)
-            cv2.putText(ui_frame, key, (x_offset, inst_y), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
-            
-            # Draw action text
-            cv2.putText(ui_frame, action, (x_offset + 30, inst_y), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.4, self.colors['text_secondary'], 1)
-            
-            x_offset += 100
+        # Draw thinking indicator (very minimal)
+        if self.robot_thinking:
+            cv2.putText(ui_frame, "...", (w - 30, 30), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, self.colors['blue'], 1)
         
         return ui_frame
     
     def run(self):
-        """Main application loop"""
+        """Main application loop - optimized for performance"""
         if not self.start_camera():
             return
         
         self.running = True
         
-        # Initial greeting
         logger.info("\n" + "="*50)
-        logger.info("Robot is now running")
-        logger.info("Press 'q' to quit, 's' to save unknown face, 'a' to add new face")
+        logger.info("Robot is now running (MINIMAL UI - NO CHAT TRANSCRIPT)")
+        logger.info("Press 'q' to quit")
         logger.info("="*50 + "\n")
         
-        self.robot.speak(f"{self.robot.robot_name} is now online and ready to assist.")
+        self.robot.speak(f"{self.robot.robot_name} is online.")
+        
+        # Performance optimization variables
+        frame_count = 0
+        process_every_n_frames = FRAME_SKIP
         
         try:
             while self.running:
@@ -473,131 +321,80 @@ class ProfessionalFaceRobot:
                     logger.error("Failed to grab frame")
                     break
                 
-                # Process every FRAME_SKIP frames
-                self.frame_count += 1
-                if self.frame_count % FRAME_SKIP == 0:
-                    # Recognize faces
+                frame_count += 1
+                
+                # Process faces less frequently
+                if frame_count % process_every_n_frames == 0:
                     faces = self.process_frame(frame)
                     self.current_faces = faces
-                    
-                    # Handle recognized faces
                     self.handle_recognized_faces(faces)
                 
-                # Draw dark UI
-                display_frame = self.draw_dark_ui(frame, self.current_faces if self.frame_count % FRAME_SKIP == 0 else [])
+                # Draw minimal UI
+                display_frame = self.draw_minimal_ui(frame, self.current_faces if frame_count % process_every_n_frames == 0 else [])
                 
-                # Display frame
-                cv2.imshow('AI Robot Assistant', display_frame)
+                # Display
+                cv2.imshow('Robot Assistant', display_frame)
                 
-                # Handle key presses
+                # Handle key presses (non-blocking)
                 key = cv2.waitKey(1) & 0xFF
                 
                 if key == ord('q'):
                     logger.info("Quit command received")
-                    self.add_chat_message("robot", "Goodbye. It was nice chatting with you.")
-                    self.robot.speak("Goodbye. It was nice chatting with you.")
-                    time.sleep(2)
+                    self.robot.speak("Goodbye.")
                     break
                 
                 elif key == ord('s') and self.current_faces:
-                    # Save unknown faces
                     self.robot_thinking = True
+                    self.last_greeting = "Saving face..."
                     for face in self.current_faces:
                         if face['name'] == "Unknown":
-                            path = save_unknown_face(frame, face, UNKNOWN_FACES_DIR)
-                            self.robot.speak("Unknown face saved for review.")
-                            self.add_chat_message("robot", "Unknown face saved for review.")
-                            logger.info(f"Saved unknown face to {path}")
+                            save_unknown_face(frame, face, UNKNOWN_FACES_DIR)
+                            self.robot.speak("Face saved.")
+                            self.last_greeting = "Face saved"
                     self.robot_thinking = False
                 
                 elif key == ord('a') and self.current_faces:
-                    # Add new face to known faces
                     unknown_faces = [f for f in self.current_faces if f['name'] == "Unknown"]
-                    
                     if unknown_faces:
                         self.robot_thinking = True
-                        self.robot.speak("Please say the name of this person.")
-                        self.add_chat_message("robot", "Please say your name. I am listening.")
-                        time.sleep(1)
-                        
-                        # Listen for name
+                        self.last_greeting = "Listening for name..."
+                        self.robot.speak("Your name?")
                         name = self.robot.listen(timeout=5)
-                        
                         if name:
-                            # Clean up the name
                             clean_name = name.strip().title()
                             self.add_to_known_faces(frame, unknown_faces[0], clean_name)
-                        else:
-                            self.robot.speak("I did not catch the name. Please try again.")
-                            self.add_chat_message("robot", "I did not hear the name. Please try again later.")
                         self.robot_thinking = False
-                    else:
-                        self.add_chat_message("robot", "No unknown faces detected.")
                 
                 elif key == ord('t'):
-                    # Conversation mode
                     self.robot_thinking = True
-                    self.add_chat_message("robot", "Starting conversation...")
-                    
+                    self.last_greeting = "Conversation mode..."
                     if self.current_faces and self.current_faces[0]['name'] != "Unknown":
                         name = self.current_faces[0]['name']
-                        conversation = self.robot.have_conversation(name=name, turns=2)
+                        self.robot.have_conversation(name=name, turns=1)
                     else:
-                        conversation = self.robot.have_conversation(turns=2)
-                    
-                    # Add conversation to chat
-                    for speaker, text in conversation:
-                        if speaker == "robot":
-                            self.add_chat_message("robot", text)
-                    
+                        self.robot.have_conversation(turns=1)
+                    self.last_greeting = "Conversation ended"
                     self.robot_thinking = False
                 
                 elif key == ord('l'):
-                    # Listen mode
                     self.robot_thinking = True
-                    self.robot.speak("I am listening. What would you like to say?")
-                    self.add_chat_message("robot", "Listening...")
-                    
+                    self.last_greeting = "Listening..."
+                    self.robot.speak("Listening?")
                     user_input = self.robot.listen(timeout=5)
-                    
                     if user_input:
-                        self.add_chat_message("user", user_input)
-                        response = self.robot.respond_to_input(user_input)
-                        self.add_chat_message("robot", response)
-                    else:
-                        self.add_chat_message("robot", "No input detected.")
-                    
+                        self.last_greeting = f"Heard: {user_input[:20]}"
+                        self.robot.respond_to_input(user_input)
                     self.robot_thinking = False
                 
                 elif key == ord('i'):
-                    # Show info
-                    self.display_info()
+                    # Show info briefly
+                    runtime = datetime.now() - self.stats['start_time']
+                    self.last_greeting = f"Runtime: {str(runtime).split('.')[0]}"
         
         except KeyboardInterrupt:
             logger.info("Interrupted by user")
         finally:
             self.cleanup()
-    
-    def display_info(self):
-        """Display system information in chat"""
-        info_messages = []
-        
-        # Runtime
-        runtime = datetime.now() - self.stats['start_time']
-        info_messages.append(f"Runtime: {str(runtime).split('.')[0]}")
-        
-        # Face database stats
-        stats = self.recognizer.get_face_stats()
-        info_messages.append(f"Known faces: {stats['total_faces']}")
-        info_messages.append(f"Total recognitions: {stats['total_recognitions']}")
-        
-        # Session stats
-        info_messages.append(f"Session: {self.stats['recognitions']} recognitions, {self.stats['unknown_faces']} unknown")
-        
-        # Add to chat
-        for msg in info_messages:
-            self.add_chat_message("robot", msg)
-            time.sleep(0.5)
     
     def cleanup(self):
         """Clean up resources"""
@@ -605,13 +402,12 @@ class ProfessionalFaceRobot:
         self.stop_camera()
         cv2.destroyAllWindows()
         
-        # Final statistics
-        self.display_info()
-        self.add_chat_message("robot", "Robot shutting down.")
-        
-        logger.info("\n" + "="*50)
+        # Final stats
+        runtime = datetime.now() - self.stats['start_time']
+        logger.info(f"Runtime: {runtime}")
+        logger.info(f"Faces detected: {self.stats['faces_detected']}")
+        logger.info(f"Recognitions: {self.stats['recognitions']}")
         logger.info("Robot shutdown complete")
-        logger.info("="*50)
 
 def main():
     """Main entry point"""
